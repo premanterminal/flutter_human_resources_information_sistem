@@ -1,5 +1,7 @@
 # flutter_human_resources_information_sistem
 
+# On ongoing projects, not all features have been completed yet.
+
 A new Flutter project.
 
 ## Getting Started
