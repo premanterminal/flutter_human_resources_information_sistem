@@ -1,0 +1,971 @@
+import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:hrisv2/main.dart';
+import 'package:flutter/material.dart';
+import 'dart:math' as math;
+import 'package:hrisv2/Network/baseUrl.dart';
+import 'package:hrisv2/util/view_util.dart';
+
+// import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'dart:io';
+
+class ListKehadiranView extends StatefulWidget {
+  final AnimationController animationController;
+  final Animation animation;
+
+  const ListKehadiranView({Key key, this.animationController, this.animation})
+      : super(key: key);
+
+  @override
+  _ListKehadiranViewState createState() => _ListKehadiranViewState();
+}
+
+class _ListKehadiranViewState extends State<ListKehadiranView> {
+  int currentPage = 0;
+
+  int to = 0;
+
+  int total = 0;
+
+  int from = 0;
+
+  int lastPage = 0;
+
+  int perPage = 0;
+
+  String nextpageUrl = '';
+
+  String prevpageUrl = '';
+
+  List dataKehadiran;
+
+  fnDataKehadiran(token) async {
+    final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'kehadiran'),
+        headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
+    final result = json.decode(response.body);
+    setState(() {
+      dataKehadiran = result['data'];
+      currentPage = result['current_page'];
+      to = result['to'];
+      total = result['total'];
+      from = result['from'];
+      lastPage = result['last_page'];
+      perPage = result['per_page'];
+      nextpageUrl = result['next_page_url'];
+      prevpageUrl = result['prev_page_url'];
+    });
+  }
+
+  fnDataKehadiranNext(token, urlnext) async {
+    if (urlnext == null) {
+      showErrorDialog({
+        'message': 'Perhatian',
+        'errors': {
+          'exception': ["Data tidak ada"]
+        }
+      });
+      return;
+    }
+    setState(() {
+      dataKehadiran = null;
+    });
+    final response = await http.get(urlnext,
+        headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
+    final result = json.decode(response.body);
+    setState(() {
+      dataKehadiran = result['data'];
+      currentPage = result['current_page'];
+      to = result['to'];
+      total = result['total'];
+      from = result['from'];
+      lastPage = result['last_page'];
+      perPage = result['per_page'];
+      nextpageUrl = result['next_page_url'];
+      prevpageUrl = result['prev_page_url'];
+    });
+  }
+
+  fnDataKehadiranPrev(token, urlprev) async {
+    if (urlprev == null) {
+      showErrorDialog({
+        'message': 'Perhatian',
+        'errors': {
+          'exception': ["Data tidak ada"]
+        }
+      });
+      return;
+    }
+    setState(() {
+      dataKehadiran = null;
+    });
+    final response = await http.get(urlprev,
+        headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
+    final result = json.decode(response.body);
+    setState(() {
+      dataKehadiran = result['data'];
+      currentPage = result['current_page'];
+      to = result['to'];
+      total = result['total'];
+      from = result['from'];
+      lastPage = result['last_page'];
+      perPage = result['per_page'];
+      nextpageUrl = result['next_page_url'];
+      prevpageUrl = result['prev_page_url'];
+    });
+  }
+
+  var token;
+
+  var statusLogin;
+
+  var id;
+
+  var nama;
+
+  var email;
+
+  var emailVerifiedAt;
+
+  var currentTeamId;
+
+  var profilePhotoPath;
+
+  var createdAt;
+
+  var updatedAt;
+
+  var role;
+
+  var dept;
+
+  var codediv;
+
+  var profilePhotoUrl;
+
+  getPref() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      token = preferences.getString('token');
+      statusLogin = preferences.getString('isLogin');
+      id = preferences.getInt('id');
+      nama = preferences.getString('name');
+      email = preferences.getString('email');
+      emailVerifiedAt = preferences.getString('email_verified_at');
+      currentTeamId = preferences.getString('current_team_id');
+      profilePhotoPath = preferences.getString('profile_photo_path');
+      createdAt = preferences.getString('created_at');
+      updatedAt = preferences.getString('updated_at');
+      role = preferences.getString('role');
+      dept = preferences.getString('dept');
+      codediv = preferences.getString('codediv');
+      profilePhotoUrl = preferences.getString('profile_photo_url');
+    });
+    print(token);
+    fnDataKehadiran(token);
+  }
+
+  List open = [];
+
+  // Widget colomData() {
+  //   return ListView.builder(
+  //       shrinkWrap: true,
+  //       physics: BouncingScrollPhysics(),
+  //       itemCount: dataKehadiran.length,
+  //       itemBuilder: (BuildContext context, int index) {
+  //         Map loaddata = dataKehadiran[index];
+  //         return Container(
+  //           color: (index % 2 == 1) ? Colors.grey[300] : Colors.white,
+  //           child: ExpansionTile(
+  //               onExpansionChanged: (value) {
+  //                 print(value);
+  //                 setState(() {
+  //                   if (value == true) {
+  //                     open.add(index);
+  //                   } else {
+  //                     open.remove(index);
+  //                   }
+  //                 });
+  //               },
+  //               trailing: SizedBox(),
+  //               leading: Container(
+  //                 margin: EdgeInsets.all(8),
+  //                 child: Image.asset(
+  //                   (open.contains(index))
+  //                       ? 'assets/icon/chevron2.png'
+  //                       : 'assets/icon/chevron1.png',
+  //                   width: 20,
+  //                 ),
+  //               ),
+  //               title: Row(
+  //                 children: [
+  //                   Expanded(
+  //                     child: Container(
+  //                         child: Text(loaddata['Date'] ?? "",
+  //                             overflow: TextOverflow.ellipsis,
+  //                             style: TextStyle(fontSize: 14))),
+  //                   ),
+  //                   Expanded(
+  //                       child: Container(
+  //                     child: Text(
+  //                       loaddata['fullname'] ?? "",
+  //                       overflow: TextOverflow.ellipsis,
+  //                       style: TextStyle(fontSize: 14),
+  //                     ),
+  //                   )),
+  //                 ],
+  //               ),
+  //               children: <Widget>[
+  //                 ListTile(
+  //                   dense: false,
+  //                   contentPadding: const EdgeInsets.all(0.0),
+  //                   title: Container(
+  //                     margin: EdgeInsets.symmetric(horizontal: 10),
+  //                     padding: EdgeInsets.only(left: 10),
+  //                     child: Column(
+  //                       crossAxisAlignment: CrossAxisAlignment.start,
+  //                       children: <Widget>[
+  //                         Container(
+  //                           margin: EdgeInsets.only(bottom: 8),
+  //                           child: Row(
+  //                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                             children: <Widget>[
+  //                               Text(
+  //                                 'Nomor Karyawan',
+  //                                 style: TextStyle(
+  //                                     fontWeight: FontWeight.bold,
+  //                                     fontSize: 12),
+  //                               ),
+  //                               Text(loaddata['employeecode'] ?? "",
+  //                                   style: TextStyle(fontSize: 12)),
+  //                             ],
+  //                           ),
+  //                         ),
+  //                         Container(
+  //                           margin: EdgeInsets.only(bottom: 8),
+  //                           child: Row(
+  //                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                             children: <Widget>[
+  //                               Text(
+  //                                 'Sign In',
+  //                                 style: TextStyle(
+  //                                     fontWeight: FontWeight.bold,
+  //                                     fontSize: 12),
+  //                               ),
+  //                               Text(loaddata['SignIn'] ?? "",
+  //                                   style: TextStyle(fontSize: 12)),
+  //                             ],
+  //                           ),
+  //                         ),
+  //                         Container(
+  //                           margin: EdgeInsets.only(bottom: 8),
+  //                           child: Row(
+  //                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                             children: <Widget>[
+  //                               Text(
+  //                                 'Sign Out',
+  //                                 style: TextStyle(
+  //                                     fontWeight: FontWeight.bold,
+  //                                     fontSize: 12),
+  //                               ),
+  //                               Container(
+  //                                   alignment: Alignment.bottomLeft,
+  //                                   child: Text(
+  //                                     loaddata['SignOut'] ?? "",
+  //                                     style: TextStyle(fontSize: 12),
+  //                                   )),
+  //                             ],
+  //                           ),
+  //                         ),
+  //                       ],
+  //                     ),
+  //                   ),
+  //                 ),
+  //               ]),
+  //         );
+  //       });
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: widget.animationController,
+      builder: (BuildContext context, Widget child) {
+        return FadeTransition(
+          opacity: widget.animation,
+          child: new Transform(
+            transform: new Matrix4.translationValues(
+                0.0, 30 * (1.0 - widget.animation.value), 0.0),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 24, right: 24, top: 16, bottom: 18),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: FitnessAppTheme.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8.0),
+                      bottomLeft: Radius.circular(8.0),
+                      bottomRight: Radius.circular(8.0),
+                      topRight: Radius.circular(68.0)),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: FitnessAppTheme.grey.withOpacity(0.2),
+                        offset: Offset(1.1, 1.1),
+                        blurRadius: 10.0),
+                  ],
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 16, left: 16, right: 16),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 8, right: 8, top: 4),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                        height: 48,
+                                        width: 2,
+                                        decoration: BoxDecoration(
+                                          color: HexColor('#87A0E5')
+                                              .withOpacity(0.5),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4.0)),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 4, bottom: 2),
+                                              child: Text(
+                                                'NIK',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontFamily:
+                                                      FitnessAppTheme.fontName,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 16,
+                                                  letterSpacing: -0.1,
+                                                  color: FitnessAppTheme.grey
+                                                      .withOpacity(0.5),
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: <Widget>[
+                                                SizedBox(
+                                                  width: 28,
+                                                  height: 28,
+                                                  child: Image.asset(
+                                                      "assets/fitness_app/eaten.png"),
+                                                ),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           left: 4, bottom: 3),
+                                                //   child: Text(
+                                                //     '${(08.28 * animation.value).toDouble()}',
+                                                //     textAlign: TextAlign.center,
+                                                //     style: TextStyle(
+                                                //       fontFamily:
+                                                //           FitnessAppTheme
+                                                //               .fontName,
+                                                //       fontWeight:
+                                                //           FontWeight.w600,
+                                                //       fontSize: 16,
+                                                //       color: FitnessAppTheme
+                                                //           .darkerText,
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 4, bottom: 3),
+                                                  child: Text(
+                                                    '0594.0121',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          FitnessAppTheme
+                                                              .fontName,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 12,
+                                                      letterSpacing: -0.2,
+                                                      color: FitnessAppTheme
+                                                          .grey
+                                                          .withOpacity(0.5),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                        height: 48,
+                                        width: 2,
+                                        decoration: BoxDecoration(
+                                          color: HexColor('#F56E98')
+                                              .withOpacity(0.5),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4.0)),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 4, bottom: 2),
+                                              child: Text(
+                                                'Nama',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontFamily:
+                                                      FitnessAppTheme.fontName,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 16,
+                                                  letterSpacing: -0.1,
+                                                  color: FitnessAppTheme.grey
+                                                      .withOpacity(0.5),
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: <Widget>[
+                                                SizedBox(
+                                                  width: 28,
+                                                  height: 28,
+                                                  child: Image.asset(
+                                                      "assets/fitness_app/burned.png"),
+                                                ),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           left: 4, bottom: 3),
+                                                //   child: Text(
+                                                //     '${(17.55 * animation.value).toDouble()}',
+                                                //     textAlign: TextAlign.center,
+                                                //     style: TextStyle(
+                                                //       fontFamily:
+                                                //           FitnessAppTheme
+                                                //               .fontName,
+                                                //       fontWeight:
+                                                //           FontWeight.w600,
+                                                //       fontSize: 16,
+                                                //       color: FitnessAppTheme
+                                                //           .darkerText,
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 8, bottom: 3),
+                                                  child: Text(
+                                                    'Fulan',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          FitnessAppTheme
+                                                              .fontName,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 12,
+                                                      letterSpacing: -0.2,
+                                                      color: FitnessAppTheme
+                                                          .grey
+                                                          .withOpacity(0.5),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Center(
+                              child: Stack(
+                                overflow: Overflow.visible,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        color: FitnessAppTheme.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(100.0),
+                                        ),
+                                        border: new Border.all(
+                                            width: 4,
+                                            color: FitnessAppTheme.cgiblue
+                                                .withOpacity(0.2)),
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Image.asset(
+                                            'assets/ToyFacesDemoByAmrit/Transparent/ToyFaces_Tansparent_BG_56.png',
+                                            fit: BoxFit.cover,
+                                            width: 75,
+                                            height: 75,
+                                          ),
+                                          Text(
+                                            '${(1503 * widget.animation.value).toInt()}',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                                  FitnessAppTheme.fontName,
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 0,
+                                              letterSpacing: 0.0,
+                                              color: FitnessAppTheme.cgiblue,
+                                            ),
+                                          ),
+
+                                          // Text(
+                                          //   'Foto Profile',
+                                          //   textAlign: TextAlign.center,
+                                          //   style: TextStyle(
+                                          //     fontFamily:
+                                          //         FitnessAppTheme.fontName,
+                                          //     fontWeight: FontWeight.bold,
+                                          //     fontSize: 12,
+                                          //     letterSpacing: 0.0,
+                                          //     color: FitnessAppTheme.grey
+                                          //         .withOpacity(0.5),
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: CustomPaint(
+                                      painter: CurvePainter(
+                                          colors: [
+                                            FitnessAppTheme.cgiblue,
+                                            HexColor("#8A98E8"),
+                                            HexColor("#8A98E8")
+                                          ],
+                                          angle: 140 +
+                                              (360 - 140) *
+                                                  (1.0 -
+                                                      widget.animation.value)),
+                                      child: SizedBox(
+                                        width: 108,
+                                        height: 108,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 24, right: 24, top: 8, bottom: 8),
+                      child: Container(
+                        height: 2,
+                        decoration: BoxDecoration(
+                          color: FitnessAppTheme.background,
+                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 24, right: 24, top: 8, bottom: 16),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Tanggal',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: FitnessAppTheme.fontName,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                    letterSpacing: -0.2,
+                                    color: FitnessAppTheme.darkText,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 4),
+                                  child: Container(
+                                    height: 4,
+                                    width: 70,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          HexColor('#87A0E5').withOpacity(0.2),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(4.0)),
+                                    ),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Container(
+                                          width: ((70 / 1.2) *
+                                              widget.animation.value),
+                                          height: 4,
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(colors: [
+                                              HexColor('#87A0E5'),
+                                              HexColor('#87A0E5')
+                                                  .withOpacity(0.5),
+                                            ]),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(4.0)),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 6),
+                                  child: Text(
+                                    'Tanggal disini',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 12,
+                                      color:
+                                          FitnessAppTheme.grey.withOpacity(0.5),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      'Sign in',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: FitnessAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        letterSpacing: -0.2,
+                                        color: FitnessAppTheme.darkText,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 4),
+                                      child: Container(
+                                        height: 4,
+                                        width: 70,
+                                        decoration: BoxDecoration(
+                                          color: HexColor('#F56E98')
+                                              .withOpacity(0.2),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4.0)),
+                                        ),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Container(
+                                              width: ((70 / 2) *
+                                                  widget.animationController
+                                                      .value),
+                                              height: 4,
+                                              decoration: BoxDecoration(
+                                                gradient:
+                                                    LinearGradient(colors: [
+                                                  HexColor('#F56E98')
+                                                      .withOpacity(0.1),
+                                                  HexColor('#F56E98'),
+                                                ]),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(4.0)),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 6),
+                                      child: Text(
+                                        'Jam Masuk',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: FitnessAppTheme.fontName,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          color: FitnessAppTheme.grey
+                                              .withOpacity(0.5),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      'Sign Out',
+                                      style: TextStyle(
+                                        fontFamily: FitnessAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        letterSpacing: -0.2,
+                                        color: FitnessAppTheme.darkText,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          right: 0, top: 4),
+                                      child: Container(
+                                        height: 4,
+                                        width: 70,
+                                        decoration: BoxDecoration(
+                                          color: HexColor('#F1B440')
+                                              .withOpacity(0.2),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4.0)),
+                                        ),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Container(
+                                              width: ((70 / 2.5) *
+                                                  widget.animationController
+                                                      .value),
+                                              height: 4,
+                                              decoration: BoxDecoration(
+                                                gradient:
+                                                    LinearGradient(colors: [
+                                                  HexColor('#F1B440')
+                                                      .withOpacity(0.1),
+                                                  HexColor('#F1B440'),
+                                                ]),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(4.0)),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 6),
+                                      child: Text(
+                                        'Jam Pulang',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: FitnessAppTheme.fontName,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          color: FitnessAppTheme.grey
+                                              .withOpacity(0.5),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class CurvePainter extends CustomPainter {
+  final double angle;
+  final List<Color> colors;
+
+  CurvePainter({this.colors, this.angle = 140});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    List<Color> colorsList = List<Color>();
+    if (colors != null) {
+      colorsList = colors;
+    } else {
+      colorsList.addAll([Colors.white, Colors.white]);
+    }
+
+    final shdowPaint = new Paint()
+      ..color = Colors.black.withOpacity(0.4)
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 14;
+    final shdowPaintCenter = new Offset(size.width / 2, size.height / 2);
+    final shdowPaintRadius =
+        math.min(size.width / 2, size.height / 2) - (14 / 2);
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.3);
+    shdowPaint.strokeWidth = 16;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.2);
+    shdowPaint.strokeWidth = 20;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.1);
+    shdowPaint.strokeWidth = 22;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    final rect = new Rect.fromLTWH(0.0, 0.0, size.width, size.width);
+    final gradient = new SweepGradient(
+      startAngle: degreeToRadians(268),
+      endAngle: degreeToRadians(270.0 + 360),
+      tileMode: TileMode.repeated,
+      colors: colorsList,
+    );
+    final paint = new Paint()
+      ..shader = gradient.createShader(rect)
+      ..strokeCap = StrokeCap.round // StrokeCap.round is not recommended.
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 14;
+    final center = new Offset(size.width / 2, size.height / 2);
+    final radius = math.min(size.width / 2, size.height / 2) - (14 / 2);
+
+    canvas.drawArc(
+        new Rect.fromCircle(center: center, radius: radius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        paint);
+
+    final gradient1 = new SweepGradient(
+      tileMode: TileMode.repeated,
+      colors: [Colors.white, Colors.white],
+    );
+
+    var cPaint = new Paint();
+    cPaint..shader = gradient1.createShader(rect);
+    cPaint..color = Colors.white;
+    cPaint..strokeWidth = 14 / 2;
+    canvas.save();
+
+    final centerToCircle = size.width / 2;
+    canvas.save();
+
+    canvas.translate(centerToCircle, centerToCircle);
+    canvas.rotate(degreeToRadians(angle + 2));
+
+    canvas.save();
+    canvas.translate(0.0, -centerToCircle + 14 / 2);
+    canvas.drawCircle(new Offset(0, 0), 14 / 5, cPaint);
+
+    canvas.restore();
+    canvas.restore();
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+
+  double degreeToRadians(double degree) {
+    var redian = (math.pi / 180) * degree;
+    return redian;
+  }
+}
