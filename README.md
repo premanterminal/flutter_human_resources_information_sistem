@@ -1,12 +1,11 @@
-# flutter_human_resources_information_sistem
+
+# On ongoing projects, not all features have been completed yet.
 
 #Back End
 Using Larawel REST API and WEb for this apps backend. 
 You can following check this link:
 https://github.com/premanterminal/laravel-human-resources-information-sistem
 
-
-# On ongoing projects, not all features have been completed yet.
 
 A new Flutter project.
 
@@ -23,4 +22,9 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+Preview:
 
+![5](https://user-images.githubusercontent.com/78519830/134610620-67fba40f-9570-4d20-9655-12d7ba5d365c.PNG)
+![6](https://user-images.githubusercontent.com/78519830/134610625-a66a8a81-a285-431b-86ce-d086cdba90e2.PNG)
+![1](https://user-images.githubusercontent.com/78519830/134610627-3c51c3a3-1cb5-4c29-aa04-e2dd86f9e2de.PNG)
+![2](https://user-images.githubusercontent.com/78519830/134610629-a3da7685-5ab2-4718-9148-7eb6f10ad95d.PNG)
