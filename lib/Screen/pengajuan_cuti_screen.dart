@@ -155,10 +155,21 @@ class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
                                                     curve:
                                                         Curves.fastOutSlowIn)));
                                     animationController.forward();
+                                    final starttime =
+                                        DateTime.parse(cutiData['start_time'])
+                                            .toLocal();
+                                    final endtime =
+                                        DateTime.parse(cutiData['end_time'])
+                                            .toLocal();
+                                    final offset = starttime.timeZoneOffset;
+                                    print('this is start time: ' +
+                                        starttime.toString());
+                                    print(
+                                        'this is offset: ' + offset.toString());
                                     return timePanelCuti(
                                         cutiData['kode_pengajuan'],
-                                        cutiData['start_time'],
-                                        cutiData['end_time'],
+                                        starttime.toString(),
+                                        endtime.toString(),
                                         cutiData['type_cuti']['type'],
                                         cutiData['keterangan'],
                                         cutiData['approved'],

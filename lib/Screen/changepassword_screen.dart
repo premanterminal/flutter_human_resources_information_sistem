@@ -98,7 +98,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       email = preferences.getString('email');
       emailVerifiedAt = preferences.getString('email_verified_at');
       currentTeamId = preferences.getString('current_team_id');
-      // profilePhotoPath = preferences.getString('profile_photo_path');
       profilePhotoPath = preferences.getString('photo');
       createdAt = preferences.getString('created_at');
       updatedAt = preferences.getString('updated_at');
@@ -107,10 +106,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       photo = profilePhotoPath.toString();
     });
 
-    //pacth_changepassword(token);
-
     print("sini sini");
-    // print(photo);
     print(preferences);
   }
 
@@ -137,7 +133,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         }
         if (form.validate()) {
           form.save();
-          //showInSnackBar('email dan Password tidak sesuai');
           print('$email, $new_password');
           setState(() {
             loadingButton = true;
@@ -192,7 +187,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: AppTheme.nearlyWhite,
       child: SafeArea(
         top: false,
         child: Scaffold(
@@ -257,11 +251,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               print('here');
 
                               pacth_changepassword(token);
-
-                              // print (old_password);
-                              // print (new_password);
-                              //delsession(token);
-                              //FocusScope.of(context).requestFocus(FocusNode());
                             },
                             child: Center(
                               child: Padding(

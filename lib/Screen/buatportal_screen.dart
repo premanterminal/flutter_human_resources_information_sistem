@@ -13,12 +13,12 @@ import 'viewAddLembur.dart';
 import 'package:hrisv2/Theme/hotel_app_theme.dart';
 import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
 
-class PengajuanLemburScreen extends StatefulWidget {
+class BuatPortalScreen extends StatefulWidget {
   @override
-  _PengajuanLemburScreenState createState() => _PengajuanLemburScreenState();
+  _BuatPortalScreenState createState() => _BuatPortalScreenState();
 }
 
-class _PengajuanLemburScreenState extends State<PengajuanLemburScreen>
+class _BuatPortalScreenState extends State<BuatPortalScreen>
     with TickerProviderStateMixin {
   AnimationController animationController;
   List<HotelListData> hotelList = HotelListData.hotelList;
@@ -157,16 +157,10 @@ class _PengajuanLemburScreenState extends State<PengajuanLemburScreen>
                                                     curve:
                                                         Curves.fastOutSlowIn)));
                                     animationController.forward();
-                                    final starttime =
-                                        DateTime.parse(lemburData['start_time'])
-                                            .toLocal();
-                                    final endtime =
-                                        DateTime.parse(lemburData['end_time'])
-                                            .toLocal();
                                     return timePanelLembur(
                                         lemburData['kode_pengajuan'],
-                                        starttime.toString(),
-                                        endtime.toString(),
+                                        lemburData['start_time'],
+                                        lemburData['end_time'],
                                         lemburData['type_overtime']['type'],
                                         lemburData['keterangan'],
                                         lemburData['approved'],

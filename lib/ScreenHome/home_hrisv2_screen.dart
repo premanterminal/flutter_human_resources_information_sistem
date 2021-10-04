@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:hrisv2/ListView/bottom_bar_view.dart';
 import 'package:hrisv2/Theme/fitness_app_theme.dart';
 import 'package:hrisv2/Screen/my_diary_screen.dart';
+import 'package:hrisv2/Screen/gaji_screen.dart';
+import 'package:hrisv2/Screen/KPIscreen.dart';
 // import 'package:hrisv2/OldHRIS/HistoriKehadiran.dart';
 // import 'package:hrisv2/OldHRIS/Cuti.dart';
 // import 'package:hrisv2/OldHRIS/Lembur.dart';
+import 'package:hrisv2/Screen/profilebig_screen.dart';
 import 'package:hrisv2/Screen/pengajuan_cuti_screen.dart';
 import 'package:hrisv2/Screen/pengajuan_lembur_screen.dart';
 
@@ -116,7 +119,7 @@ class _HomeHRISv2ScreenState extends State<HomeHRISv2Screen>
                   return;
                 }
                 setState(() {
-                  tabBody = PengajuanLemburScreen();
+                  tabBody = KPIScreen(animationController: animationController);
                   // tabBody = ListlemburScreen(
                   //     animationController: animationController);
                 });
@@ -127,7 +130,8 @@ class _HomeHRISv2ScreenState extends State<HomeHRISv2Screen>
                   return;
                 }
                 setState(() {
-                  tabBody = HistoriKehadiran();
+                  tabBody = new ProfileBigScreen();
+                  //tabBody = HistoriKehadiran();
                   // tabBody = ListkehadiranScreen(
                   //     animationController: animationController);
                 });
@@ -138,11 +142,11 @@ class _HomeHRISv2ScreenState extends State<HomeHRISv2Screen>
                   return;
                 }
                 setState(() {
-                  tabBody = PengajuanCutiScreen();
+                  //tabBody = GajiScreen();
 
-                  // tabBody =
-                  //     ListcutiScreen(animationController: animationController);
-                  //GajiScreen(animationController: animationController);
+                  tabBody =
+                      //     ListcutiScreen(animationController: animationController);
+                      GajiScreen(animationController: animationController);
                   //MoreGajiScreen(animationController: animationController);
                 });
               });

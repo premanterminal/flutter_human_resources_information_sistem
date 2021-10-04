@@ -415,7 +415,7 @@ class _LoginState extends State<Login> {
                         children: const <Widget>[
                           Text(
                             //'v1.1.1 (Beta)',
-                            'v2.1.9 ',
+                            'v2.1.13 ',
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12.0,

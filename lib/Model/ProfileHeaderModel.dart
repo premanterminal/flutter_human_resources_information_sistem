@@ -14,18 +14,18 @@ class ProfileHeaderModel {
   int IDprofile;
 
   static List<ProfileHeaderModel> categoryList = <ProfileHeaderModel>[
-    ProfileHeaderModel(
-      imagePath: 'assets/images/paybill.jpg',
-      title: 'Slip Gaji',
-      linkscreen: '',
-      IDprofile: 1,
-    ),
-    ProfileHeaderModel(
-      imagePath: 'assets/images/KPI.jpg',
-      title: 'KPI',
-      linkscreen: '',
-      IDprofile: 2,
-    ),
+    // ProfileHeaderModel(
+    //   imagePath: 'assets/images/paybill.jpg',
+    //   title: 'Slip Gaji',
+    //   linkscreen: '',
+    //   IDprofile: 1,
+    // ),
+    // ProfileHeaderModel(
+    //   imagePath: 'assets/images/KPI.jpg',
+    //   title: 'KPI',
+    //   linkscreen: '',
+    //   IDprofile: 2,
+    // ),
     ProfileHeaderModel(
       imagePath: 'assets/images/ganti-pass-wd.jpg',
       title: 'Change Password',

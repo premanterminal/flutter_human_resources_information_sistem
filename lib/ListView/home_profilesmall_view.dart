@@ -4,6 +4,7 @@ import 'package:hrisv2/main.dart';
 // import 'package:hrisv2/Screen/gaji_screen.dart';
 // import 'package:hrisv2/Screen/profil_screen.dart';
 import 'package:hrisv2/Screen/profilebig_screen.dart';
+import 'package:hrisv2/OldHRIS/HistoriKehadiran.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -522,7 +523,8 @@ class _HomeProfileSmallViewState extends State<HomeProfileSmallView> {
                                       Navigator.of(context).push(
                                           new MaterialPageRoute(
                                               builder: (BuildContext context) {
-                                        return new ProfileBigScreen();
+                                        return new HistoriKehadiran();
+                                        ;
                                       }));
                                     },
                                     child: Container(
@@ -543,8 +545,8 @@ class _HomeProfileSmallViewState extends State<HomeProfileSmallView> {
                                               ),
                                         ),
                                         child: Text(
-                                          'Profil'
-                                          ' Saya',
+                                          'List'
+                                          ' Absensi',
                                           style: TextStyle(
                                               fontSize: 14.0,
                                               fontWeight: FontWeight.w300,

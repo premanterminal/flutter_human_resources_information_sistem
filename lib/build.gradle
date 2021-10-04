@@ -33,6 +33,7 @@ android {
     }
 
     defaultConfig {
+        //Attention
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.hrisv2"
         hrisv2/listview19
@@ -43,6 +44,7 @@ android {
 
     buildTypes {
         release {
+            //Attention
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug

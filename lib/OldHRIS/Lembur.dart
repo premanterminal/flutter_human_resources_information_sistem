@@ -1,29 +1,19 @@
-import 'package:hrisv2/listview/title_view.dart';
-import 'package:hrisv2/listview/listlembur_view.dart';
-import 'package:hrisv2/listview/glass_view.dart';
-import 'package:flutter/material.dart';
-
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
-
-import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'dart:io';
 
-class ListlemburScreen extends StatefulWidget {
-  const ListlemburScreen({Key key, this.animationController}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:hrisv2/Network/baseUrl.dart';
+import 'package:hrisv2/util/view_util.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hrisv2/Screen/profilebig_screen.dart';
 
-  final AnimationController animationController;
+class Lembur extends StatefulWidget {
   @override
-  _ListlemburScreenState createState() => _ListlemburScreenState();
+  _LemburState createState() => _LemburState();
 }
 
-class _ListlemburScreenState extends State<ListlemburScreen>
-    with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
-
+class _LemburState extends State<Lembur> {
   int currentPage = 0;
   int to = 0;
   int total = 0;
@@ -260,241 +250,191 @@ class _ListlemburScreenState extends State<ListlemburScreen>
         });
   }
 
-  List<Widget> listViews = <Widget>[];
-  final ScrollController scrollController = ScrollController();
-  double topBarOpacity = 0.0;
-
   @override
   void initState() {
-    topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-        CurvedAnimation(
-            parent: widget.animationController,
-            curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
-    addAllListData();
-
-    scrollController.addListener(() {
-      if (scrollController.offset >= 24) {
-        if (topBarOpacity != 1.0) {
-          setState(() {
-            topBarOpacity = 1.0;
-          });
-        }
-      } else if (scrollController.offset <= 24 &&
-          scrollController.offset >= 0) {
-        if (topBarOpacity != scrollController.offset / 24) {
-          setState(() {
-            topBarOpacity = scrollController.offset / 24;
-          });
-        }
-      } else if (scrollController.offset <= 0) {
-        if (topBarOpacity != 0.0) {
-          setState(() {
-            topBarOpacity = 0.0;
-          });
-        }
-      }
-    });
+    getPref();
     super.initState();
-  }
-
-  void addAllListData() {
-    const int count = 5;
-
-    listViews.add(
-      TitleView(
-        titleTxt: 'List Lembur Saya',
-        subTxt: 'Download',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      ListLemburView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      GlassView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-  }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
-    return true;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage("assets/images/bg-home.png"),
-        fit: BoxFit.cover,
-      )),
-      // /color: FitnessAppTheme.background,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(
-          children: <Widget>[
-            getMainListViewUI(),
-            getAppBarUI(),
-            SizedBox(
-              height: MediaQuery.of(context).padding.bottom,
-            )
-          ],
-        ),
-      ),
-    );
-  }
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage("assets/images/bg-list.png"),
+          fit: BoxFit.cover,
+        )),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            actions: [
+              Container(
+                margin: EdgeInsets.all(5),
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(new MaterialPageRoute(
+                          builder: (BuildContext context) {
+                        return new ProfileBigScreen();
+                      }));
+                    },
+                    icon: Image.asset(
+                      'assets/images/profile.png',
+                    )),
+              ),
+            ],
+          ),
+          body: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 15, right: 15),
+                child: Text(
+                  'History Lembur',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35,
+                      color: Colors.white),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Container(
+                            child: TextFormField(
+                          minLines: 1,
+                          maxLines: null,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0)),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 0.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 0.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            prefixIcon: Icon(Icons.search),
+                            hintText: 'Search',
+                            labelText: 'Search',
+                            hintStyle: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 12.0),
+                          ),
 
-  Widget getMainListViewUI() {
-    return FutureBuilder<bool>(
-      future: getData(),
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-        if (!snapshot.hasData) {
-          return const SizedBox();
-        } else {
-          return ListView.builder(
-            controller: scrollController,
-            padding: EdgeInsets.only(
-              top: AppBar().preferredSize.height +
-                  MediaQuery.of(context).padding.top +
-                  24,
-              bottom: 62 + MediaQuery.of(context).padding.bottom,
-            ),
-            itemCount: listViews.length,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (BuildContext context, int index) {
-              widget.animationController.forward();
-              return listViews[index];
-            },
-          );
-        }
-      },
-    );
-  }
-
-  Widget getAppBarUI() {
-    return Column(
-      children: <Widget>[
-        AnimatedBuilder(
-          animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
-            return FadeTransition(
-              opacity: topBarAnimation,
-              child: Transform(
-                transform: Matrix4.translationValues(
-                    0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: FitnessAppTheme.white.withOpacity(topBarOpacity),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(32.0),
+                          //autofocus: true,
+                          onChanged: (value) {},
+                        )),
+                        Container(
+                            margin: EdgeInsets.only(top: 10),
+                            decoration: new BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8))),
+                            child: ExpansionTile(
+                              trailing: SizedBox(),
+                              leading: SizedBox(),
+                              title: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                      child: Text("Nik",
+                                          style: TextStyle(fontSize: 14))),
+                                  Container(
+                                      child: Text("Nama",
+                                          style: TextStyle(fontSize: 14))),
+                                  Container(
+                                      child: Text(
+                                    "Kode Lembur",
+                                    style: TextStyle(fontSize: 14),
+                                  )),
+                                ],
+                              ),
+                            )),
+                        (dataLembur == null)
+                            ? Container(
+                                margin: EdgeInsets.all(20),
+                                child: CircularProgressIndicator())
+                            : colomData(),
+                      ],
                     ),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: FitnessAppTheme.grey
-                              .withOpacity(0.4 * topBarOpacity),
-                          offset: const Offset(1.1, 1.1),
-                          blurRadius: 10.0),
-                    ],
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: MediaQuery.of(context).padding.top,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 16,
-                            right: 16,
-                            top: 16 - 8.0 * topBarOpacity,
-                            bottom: 12 - 8.0 * topBarOpacity),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image.asset(
-                                  'assets/fitness_app/logo.png',
-                                  height: 50,
-                                  width: 50,
-                                  fit: BoxFit.fitHeight,
-                                  alignment: Alignment.topLeft,
-                                ),
-                              ),
-                              // child: Text(
-                              //   'Logo',
-                              //   textAlign: TextAlign.left,
-                              //   style: TextStyle(
-                              //     fontFamily: FitnessAppTheme.fontName,
-                              //     fontWeight: FontWeight.w700,
-                              //     fontSize: 22 + 6 - 6 * topBarOpacity,
-                              //     letterSpacing: 1.2,
-                              //     color: FitnessAppTheme.darkerText,
-                              //   ),
-                              // ),
-                              //),
-                            ),
-                            // SizedBox(
-                            //   height: 38,
-                            //   width: 38,
-                            //   child: InkWell(
-                            //     highlightColor: Colors.transparent,
-                            //     borderRadius: const BorderRadius.all(
-                            //         Radius.circular(32.0)),
-                            //     onTap: () {},
-                            //     child: Center(
-                            //       child: Icon(
-                            //         Icons.notifications,
-                            //         color: FitnessAppTheme.grey,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            SizedBox(
-                              height: 38,
-                              width: 38,
-                              child: InkWell(
-                                highlightColor: Colors.transparent,
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(32.0)),
-                                onTap: () {},
-                                child: Center(
-                                  child: Icon(
-                                    Icons.exit_to_app_sharp,
-                                    color: FitnessAppTheme.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
                   ),
                 ),
               ),
-            );
-          },
-        )
-      ],
+              Container(
+                margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                child: Text('Showing 1 to ' +
+                    (perPage.toString() ?? '0') +
+                    ' of ' +
+                    (total.toString() ?? "0") +
+                    ' entries'),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Page '),
+                    Container(
+                      child: Text(currentPage.toString() ?? '0'),
+                    ),
+                    Text(' Of ' + lastPage.toString() ?? '0'),
+                    Container(
+                      height: 30,
+                      decoration: new BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Row(
+                        children: [
+                          IconButton(
+                              padding: EdgeInsets.all(0),
+                              onPressed: () {
+                                fnDataLemburNext(token, prevpageUrl);
+                              },
+                              icon: Icon(
+                                Icons.arrow_back_ios_outlined,
+                                size: 20,
+                                color: Colors.white,
+                              )),
+                          IconButton(
+                              padding: EdgeInsets.all(0),
+                              onPressed: () {
+                                fnDataLemburNext(token, nextpageUrl);
+                              },
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 20,
+                                color: Colors.white,
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

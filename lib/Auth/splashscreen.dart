@@ -103,7 +103,8 @@ class _SplashscreenState extends State<Splashscreen> {
                       children: const <Widget>[
                         Spacer(),
                         //Text('v2.1.1 (beta)',
-                        Text('v2.1.9', style: TextStyle(color: Colors.black87)),
+                        Text('v2.1.13',
+                            style: TextStyle(color: Colors.black87)),
                         Spacer()
                       ],
                     ),

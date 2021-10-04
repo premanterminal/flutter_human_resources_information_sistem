@@ -164,6 +164,7 @@ class _ListCutiViewState extends State<ListCutiView> {
         itemCount: dataCuti.length,
         itemBuilder: (BuildContext context, int index) {
           Map loaddata = dataCuti[index];
+          final offsset = loaddata['start_time'].timseZoneoffset;
           return Container(
             color: (index % 2 == 1) ? Colors.grey[300] : Colors.white,
             child: ExpansionTile(
@@ -226,7 +227,7 @@ class _ListCutiViewState extends State<ListCutiView> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12),
                                 ),
-                                Text(loaddata['start_time'] ?? "",
+                                Text(loaddata['start_time'].add(offsset) ?? "",
                                     style: TextStyle(fontSize: 12)),
                               ],
                             ),
