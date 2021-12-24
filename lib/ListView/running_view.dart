@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class RunningView extends StatelessWidget {
   final AnimationController animationController;

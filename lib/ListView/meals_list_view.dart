@@ -1,6 +1,6 @@
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Model/meals_list_data.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Model/meals_list_data.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 //import '../../main.dart';

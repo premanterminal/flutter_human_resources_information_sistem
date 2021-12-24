@@ -1,17 +1,17 @@
-//import 'package:hrisv2/listview/title_view.dart';
-import 'package:hrisv2/listview/ProfilEducation_LV.dart';
-import 'package:hrisv2/listview/glass_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/ProfilEducation_LV.dart';
+import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
 import 'package:flutter/material.dart';
 
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Network/baseUrl.dart';
-//import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+//import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 //import 'dart:convert';
 import 'dart:io';
-import 'package:hrisv2/Auth/login.dart';
+import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 
 class ProfilEducationScreen extends StatefulWidget {
   const ProfilEducationScreen({Key key, this.animationController})

@@ -1,12 +1,12 @@
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-// import 'package:hrisv2/Theme/fitness_app_theme.dart';
+// import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';

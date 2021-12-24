@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrisv2/Auth/login.dart';
+import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 import 'package:intl/intl.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 

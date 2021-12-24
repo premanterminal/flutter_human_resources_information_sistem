@@ -1,13 +1,13 @@
 import 'dart:math' as math;
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Model/tabIcon_data.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Model/tabIcon_data.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
-// import 'package:hrisv2/util/view_util.dart';
-// import 'package:hrisv2/Screen/tambah_portal_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/tambah_portal_screen.dart';
 
 //import '../../main.dart';
-import 'package:hrisv2/Model/tabIcon_data.dart';
+import 'package:flutter_human_resources_information_sistem/Model/tabIcon_data.dart';
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView(

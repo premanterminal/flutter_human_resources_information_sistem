@@ -36,7 +36,7 @@ android {
         //Attention
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.hrisv2"
-        hrisv2/listview19
+        flutter_human_resources_information_sistem/listview19
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

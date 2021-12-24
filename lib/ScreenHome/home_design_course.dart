@@ -1,9 +1,9 @@
-import 'package:hrisv2/Listview/category_list_view.dart';
-import 'package:hrisv2/Screen/course_info_screen.dart';
-import 'package:hrisv2/Listview/popular_course_list_view.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Listview/category_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/course_info_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Listview/popular_course_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
 
 class DesignCourseHomeScreen extends StatefulWidget {
   @override

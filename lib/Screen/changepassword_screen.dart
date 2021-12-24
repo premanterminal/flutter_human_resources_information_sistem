@@ -1,9 +1,9 @@
-import 'package:hrisv2/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Auth/login.dart';
+import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 //import 'package:flutter/services.dart';
-import 'package:hrisv2/network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 //import 'package:imei_plugin/imei_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;

@@ -1,4 +1,4 @@
-import 'package:hrisv2/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HelpScreen extends StatefulWidget {

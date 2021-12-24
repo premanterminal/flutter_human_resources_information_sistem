@@ -1,12 +1,12 @@
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
-// import 'package:hrisv2/Screen/emptydata_screen.dart';
-import 'package:hrisv2/Screen/ProfilDetailscreen.dart';
-import 'package:hrisv2/Screen/Profile_Family_Screen_New.dart';
-import 'package:hrisv2/Screen/Profile_Education_Screen_New.dart';
-import 'package:hrisv2/Screen/Profile_WorkEksperience_Screen_New.dart';
-//import 'package:hrisv2/Model/category.dart';
-import 'package:hrisv2/Model/ProfileHeaderModel.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/emptydata_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/ProfilDetailscreen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/Profile_Family_Screen_New.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/Profile_Education_Screen_New.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/Profile_WorkEksperience_Screen_New.dart';
+//import 'package:flutter_human_resources_information_sistem/Model/category.dart';
+import 'package:flutter_human_resources_information_sistem/Model/ProfileHeaderModel.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 class ProfileDetailListView extends StatefulWidget {

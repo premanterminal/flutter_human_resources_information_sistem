@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Screen/tambah_portal_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/tambah_portal_screen.dart';
 
 class MenuTambahPortalView extends StatelessWidget {
   final AnimationController animationController;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
 
 class CourseInfoScreen extends StatefulWidget {
   @override

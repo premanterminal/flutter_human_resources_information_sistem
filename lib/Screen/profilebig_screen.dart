@@ -1,11 +1,11 @@
-import 'package:hrisv2/listview/profileheaderlist.dart';
-import 'package:hrisv2/Screen/course_info_screen.dart';
-//import 'package:hrisv2/design_course/popular_course_list_view.dart';
-import 'package:hrisv2/listview/ProfileDetail_view.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/listview/profileheaderlist.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/course_info_screen.dart';
+//import 'package:flutter_human_resources_information_sistem/design_course/popular_course_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/ProfileDetail_view.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'dart:convert';
@@ -13,8 +13,8 @@ import 'dart:io';
 
 //import 'package:flutter/material.dart';
 //import 'package:get/get.dart';
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 //import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 //import 'package:cached_network_image/cached_network_image.dart';

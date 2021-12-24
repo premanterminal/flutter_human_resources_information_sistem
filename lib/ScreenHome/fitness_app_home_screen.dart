@@ -1,19 +1,19 @@
-import 'package:hrisv2/Model/tabIcon_data.dart';
-import 'package:hrisv2/Screen/listlembur_screen.dart';
-import 'package:hrisv2/Screen/listkehadiran_screen.dart';
-import 'package:hrisv2/Screen/listcuti_screen.dart';
-// import 'package:hrisv2/Screen/training_screen.dart';
-// import 'package:hrisv2/Screen/list_tambah.dart';
-// import 'package:hrisv2/Screen/list_tambah_user.dart';
-// import 'package:hrisv2/Screen/gaji_screen.dart';
-// import 'package:hrisv2/Screen/more_salary_screen.dart';
-import 'package:hrisv2/OldHRIS/Attandance.dart';
+import 'package:flutter_human_resources_information_sistem/Model/tabIcon_data.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/listlembur_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/listkehadiran_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/listcuti_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/training_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/list_tambah.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/list_tambah_user.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/more_salary_screen.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/Attandance.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/ListView/bottom_bar_view.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Screen/my_diary_screen.dart';
-// import 'package:hrisv2/navigation_home_screen.dart';
-// import 'package:hrisv2/invite_friend_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/bottom_bar_view.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/my_diary_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/navigation_home_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/invite_friend_screen.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:hrisv2/listview/range_slider_view.dart';
-//import 'package:hrisv2/listview/slider_view.dart';
-import 'package:hrisv2/Theme/hotel_app_theme.dart';
-import 'package:hrisv2/model/popular_filter_list.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/range_slider_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/slider_view.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/model/popular_filter_list.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
 //import 'package:dropdownfield/dropdownfield.dart';

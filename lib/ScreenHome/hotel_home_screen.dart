@@ -1,12 +1,12 @@
 import 'dart:ui';
-import 'package:hrisv2/Listview/calendar_popup_view.dart';
-import 'package:hrisv2/Listview/hotel_list_view.dart';
-import 'package:hrisv2/Model/hotel_list_data.dart';
+import 'package:flutter_human_resources_information_sistem/Listview/calendar_popup_view.dart';
+import 'package:flutter_human_resources_information_sistem/Listview/hotel_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/Model/hotel_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:hrisv2/Screen/filters_screen.dart';
-import 'package:hrisv2/Theme/hotel_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/filters_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
 
 class HotelHomeScreen extends StatefulWidget {
   @override

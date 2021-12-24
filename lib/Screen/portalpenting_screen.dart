@@ -1,10 +1,10 @@
-import 'package:hrisv2/listview/area_list_view.dart';
-import 'package:hrisv2/listview/running_view.dart';
-import 'package:hrisv2/listview/title_view.dart';
-import 'package:hrisv2/listview/workout_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/area_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/running_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/workout_view.dart';
 import 'package:flutter/material.dart';
 
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class PortalpentingScreen extends StatefulWidget {
   const PortalpentingScreen({Key key, this.animationController})

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:intl/intl.dart';
 
 import 'MapsClock.dart';

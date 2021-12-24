@@ -1,4 +1,4 @@
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 class HotelAppTheme {

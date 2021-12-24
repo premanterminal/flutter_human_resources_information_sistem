@@ -1,15 +1,15 @@
-import 'package:hrisv2/listview/title_view.dart';
-//import 'package:hrisv2/listview/salaryhome_view.dart';
-import 'package:hrisv2/listview/salary_view01.dart';
-import 'package:hrisv2/listview/salary_view02.dart';
-import 'package:hrisv2/listview/salary_view03.dart';
-import 'package:hrisv2/listview/salary_view04.dart';
-import 'package:hrisv2/listview/salary_view08.dart';
-import 'package:hrisv2/listview/salary_view06.dart';
-import 'package:hrisv2/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/salaryhome_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view01.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view02.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view03.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view04.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view08.dart';
+import 'package:flutter_human_resources_information_sistem/listview/salary_view06.dart';
+import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
 import 'package:flutter/material.dart';
 
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class MoreGajiScreen extends StatefulWidget {
   const MoreGajiScreen({Key key, this.animationController}) : super(key: key);

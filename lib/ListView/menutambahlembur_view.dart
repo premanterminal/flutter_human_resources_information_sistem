@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-//import 'package:hrisv2/Screen/tambah_lembur_screen.dart';
-import 'package:hrisv2/Screen/pengajuan_lembur_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+//import 'package:flutter_human_resources_information_sistem/Screen/tambah_lembur_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_lembur_screen.dart';
 
 class MenuTambahLemburView extends StatelessWidget {
   final AnimationController animationController;

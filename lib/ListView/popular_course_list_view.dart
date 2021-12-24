@@ -1,6 +1,6 @@
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
-import 'package:hrisv2/Model/category.dart';
-import 'package:hrisv2/main.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Model/category.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 class PopularCourseListView extends StatefulWidget {

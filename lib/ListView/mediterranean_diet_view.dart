@@ -1,8 +1,8 @@
-import 'package:hrisv2/Screen/changepassword_screen.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/main.dart';
-import 'package:hrisv2/Screen/gaji_screen.dart';
-// import 'package:hrisv2/Screen/profil_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/changepassword_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/profil_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;

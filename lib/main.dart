@@ -1,13 +1,13 @@
 import 'dart:io';
-import 'package:hrisv2/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hrisv2/ScreenHome/navigation_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/navigation_home_screen.dart';
 // import 'fitness_app/my_diary/my_diary_screen.dart';
 // import 'fitness_app/fitness_app_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:hrisv2/Auth/splashscreen.dart';
-//import 'package:hrisv2/OldHRIS/splashscreen.dart';
+import 'package:flutter_human_resources_information_sistem/Auth/splashscreen.dart';
+//import 'package:flutter_human_resources_information_sistem/OldHRIS/splashscreen.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 void main() async {

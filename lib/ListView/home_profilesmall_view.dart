@@ -1,15 +1,15 @@
-// import 'package:hrisv2/Screen/changepassword_screen.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/main.dart';
-// import 'package:hrisv2/Screen/gaji_screen.dart';
-// import 'package:hrisv2/Screen/profil_screen.dart';
-import 'package:hrisv2/Screen/profilebig_screen.dart';
-import 'package:hrisv2/OldHRIS/HistoriKehadiran.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/changepassword_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/profil_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/profilebig_screen.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/HistoriKehadiran.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:intl/intl.dart';
-// import 'package:hrisv2/Auth/login.dart';
+// import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 //import 'package:flutter/material.dart';
 
 import 'dart:convert';
@@ -17,8 +17,8 @@ import 'dart:io';
 
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 // import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cached_network_image/cached_network_image.dart';

@@ -1,6 +1,6 @@
-import 'package:hrisv2/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/model/homelist.dart';
+import 'package:flutter_human_resources_information_sistem/model/homelist.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key key}) : super(key: key);

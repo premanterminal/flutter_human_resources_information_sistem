@@ -1,8 +1,8 @@
-import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
-// import 'package:hrisv2/Screen/list_tambah.dart';
-// import 'package:hrisv2/OldHRIS/Attandance.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/list_tambah.dart';
+// import 'package:flutter_human_resources_information_sistem/OldHRIS/Attandance.dart';
 
 class TitleHereView extends StatelessWidget {
   final IconData iconhere;

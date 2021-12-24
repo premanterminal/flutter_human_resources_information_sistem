@@ -6,7 +6,7 @@ class TabIconData {
     this.index = 0,
     this.selectedImagePath = '',
     this.isSelected = false,
-    this.animationController,
+    required this.animationController,
   });
 
   String imagePath;

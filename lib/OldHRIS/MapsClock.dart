@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
-import 'package:hrisv2/util/view_util.dart';
-import 'package:hrisv2/ScreenHome/fitness_app_home_screen.dart';
-import 'package:hrisv2/Screen/my_diary_screen.dart';
-import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/fitness_app_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/my_diary_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

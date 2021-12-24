@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-//import 'package:hrisv2/Screen/tambah_cuti_screen.dart';
-//import 'package:hrisv2/ScreenHome/hotel_home_screen.dart';
-import 'package:hrisv2/Screen/pengajuan_cuti_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+//import 'package:flutter_human_resources_information_sistem/Screen/tambah_cuti_screen.dart';
+//import 'package:flutter_human_resources_information_sistem/ScreenHome/hotel_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_cuti_screen.dart';
 
 class MenuTambahCutiView extends StatelessWidget {
   final AnimationController animationController;

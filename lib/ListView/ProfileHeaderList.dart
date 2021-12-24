@@ -1,12 +1,12 @@
-// import 'package:hrisv2/Screen/emptydata_screen.dart';
-import 'package:hrisv2/Theme/design_course_app_theme.dart';
-//import 'package:hrisv2/Model/category.dart';
-import 'package:hrisv2/Model/ProfileHeaderModel.dart';
-import 'package:hrisv2/main.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/emptydata_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
+//import 'package:flutter_human_resources_information_sistem/Model/category.dart';
+import 'package:flutter_human_resources_information_sistem/Model/ProfileHeaderModel.dart';
+import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Screen/gaji_screen.dart';
-import 'package:hrisv2/Screen/KPIScreen.dart';
-import 'package:hrisv2/Screen/changepassword_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/KPIScreen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/changepassword_screen.dart';
 
 class ProfileHeaderListView extends StatefulWidget {
   const ProfileHeaderListView({Key key, this.callBack}) : super(key: key);

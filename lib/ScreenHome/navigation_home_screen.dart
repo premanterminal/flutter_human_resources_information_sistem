@@ -1,10 +1,10 @@
-import 'package:hrisv2/Theme/app_theme.dart';
-import 'package:hrisv2/custom_drawer/drawer_user_controller.dart';
-import 'package:hrisv2/custom_drawer/home_drawer.dart';
-import 'package:hrisv2/Screen/feedback_screen.dart';
-import 'package:hrisv2/Screen/help_screen.dart';
-import 'package:hrisv2/ScreenHome/home_screen.dart';
-import 'package:hrisv2/Screen/invite_friend_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/custom_drawer/drawer_user_controller.dart';
+import 'package:flutter_human_resources_information_sistem/custom_drawer/home_drawer.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/feedback_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/help_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/invite_friend_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavigationHomeScreen extends StatefulWidget {

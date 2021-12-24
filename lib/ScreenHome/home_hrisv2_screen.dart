@@ -1,21 +1,21 @@
-import 'package:hrisv2/Model/tabIcon_data.dart';
-import 'package:hrisv2/OldHRIS/HistoriKehadiran.dart';
-import 'package:hrisv2/OldHRIS/Attandance.dart';
+import 'package:flutter_human_resources_information_sistem/Model/tabIcon_data.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/HistoriKehadiran.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/Attandance.dart';
 import 'package:flutter/material.dart';
-import 'package:hrisv2/ListView/bottom_bar_view.dart';
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
-import 'package:hrisv2/Screen/my_diary_screen.dart';
-import 'package:hrisv2/Screen/gaji_screen.dart';
-import 'package:hrisv2/Screen/KPIscreen.dart';
-// import 'package:hrisv2/OldHRIS/HistoriKehadiran.dart';
-// import 'package:hrisv2/OldHRIS/Cuti.dart';
-// import 'package:hrisv2/OldHRIS/Lembur.dart';
-import 'package:hrisv2/Screen/profilebig_screen.dart';
-import 'package:hrisv2/Screen/pengajuan_cuti_screen.dart';
-import 'package:hrisv2/Screen/pengajuan_lembur_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/bottom_bar_view.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/my_diary_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/KPIscreen.dart';
+// import 'package:flutter_human_resources_information_sistem/OldHRIS/HistoriKehadiran.dart';
+// import 'package:flutter_human_resources_information_sistem/OldHRIS/Cuti.dart';
+// import 'package:flutter_human_resources_information_sistem/OldHRIS/Lembur.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/profilebig_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_cuti_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_lembur_screen.dart';
 
-// import 'package:hrisv2/navigation_home_screen.dart';
-// import 'package:hrisv2/invite_friend_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/navigation_home_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/invite_friend_screen.dart';
 
 class HomeHRISv2Screen extends StatefulWidget {
   const HomeHRISv2Screen({Key key, this.animationController}) : super(key: key);

@@ -1,14 +1,14 @@
-import 'package:hrisv2/listview/title_view.dart';
-import 'package:hrisv2/listview/menutambahlembur_view.dart';
-//import 'package:hrisv2/listview/menutambahportal_view.dart';
-import 'package:hrisv2/listview/menutambahcuti_view.dart';
-//import 'package:hrisv2/listview/menutambahappvcuti_view.dart';
-//import 'package:hrisv2/listview/menutambahappvlembur_view.dart';
-import 'package:hrisv2/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/menutambahlembur_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/menutambahportal_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/menutambahcuti_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/menutambahappvcuti_view.dart';
+//import 'package:flutter_human_resources_information_sistem/listview/menutambahappvlembur_view.dart';
+import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
 
 import 'package:flutter/material.dart';
 
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class ListtambahForUserScreen extends StatefulWidget {
   const ListtambahForUserScreen(

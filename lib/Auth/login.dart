@@ -2,12 +2,12 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hrisv2/network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:imei_plugin/imei_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:hrisv2/ScreenHome/fitness_app_home_screen.dart';
-import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
+// import 'package:flutter_human_resources_information_sistem/ScreenHome/fitness_app_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
 
 import 'package:http/http.dart' as http;
 
@@ -22,7 +22,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  String email, password;
+  late String email, password;
   bool loadingButton = false;
   bool _obscureTextLogin = true;
   final _key = new GlobalKey<FormState>();

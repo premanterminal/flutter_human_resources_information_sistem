@@ -1,13 +1,13 @@
-import 'package:hrisv2/ScreenHome/home_design_course.dart';
-//import 'package:hrisv2/ScreenHome/fitness_app_home_screen.dart';
-import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
-//import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
-import 'package:hrisv2/ScreenHome/hotel_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_design_course.dart';
+//import 'package:flutter_human_resources_information_sistem/ScreenHome/fitness_app_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
+//import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/hotel_home_screen.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeList {
   HomeList({
-    this.navigateScreen,
+    required this.navigateScreen,
     this.imagePath = '',
   });
 

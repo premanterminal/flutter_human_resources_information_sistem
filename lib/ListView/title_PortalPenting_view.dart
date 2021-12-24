@@ -1,7 +1,7 @@
-import 'package:hrisv2/Theme/fitness_app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
-// import 'package:hrisv2/Screen/portalpenting_screen.dart';
-import 'package:hrisv2/OldHRIS/portal.dart';
+// import 'package:flutter_human_resources_information_sistem/Screen/portalpenting_screen.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/portal.dart';
 
 class TitlePortalPentingView extends StatelessWidget {
   final IconData iconhere;

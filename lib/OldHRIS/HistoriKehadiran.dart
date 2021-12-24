@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:hrisv2/Network/baseUrl.dart';
-import 'package:hrisv2/util/view_util.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:hrisv2/Screen/profilebig_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/profilebig_screen.dart';
 
 class HistoriKehadiran extends StatefulWidget {
   @override
@@ -136,7 +136,7 @@ class _HistoriKehadiranState extends State<HistoriKehadiran> {
 
   List open = [];
   var substr_time = 'dartlang';
-  
+
   Widget colomData() {
     return ListView.builder(
         shrinkWrap: true,
@@ -176,7 +176,6 @@ class _HistoriKehadiranState extends State<HistoriKehadiran> {
                               style: TextStyle(fontSize: 14))),
                     ),
                     Expanded(
-                    
                         child: Container(
                       child: Text(
                         loaddata['SignIn'] ?? "",

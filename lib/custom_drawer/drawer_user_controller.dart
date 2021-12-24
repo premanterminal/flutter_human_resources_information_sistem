@@ -1,17 +1,17 @@
-import 'package:hrisv2/Theme/app_theme.dart';
-import 'package:hrisv2/custom_drawer/home_drawer.dart';
+import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
+import 'package:flutter_human_resources_information_sistem/custom_drawer/home_drawer.dart';
 import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({
-    Key key,
+    required Key key,
     this.drawerWidth = 250,
-    this.onDrawerCall,
-    this.screenView,
+    required this.onDrawerCall,
+    required this.screenView,
     this.animatedIconData = AnimatedIcons.arrow_menu,
-    this.menuView,
-    this.drawerIsOpen,
-    this.screenIndex,
+    required this.menuView,
+    required this.drawerIsOpen,
+    required this.screenIndex,
   }) : super(key: key);
 
   final double drawerWidth;

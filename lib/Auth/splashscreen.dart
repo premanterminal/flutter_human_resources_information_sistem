@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:hrisv2/util/app_const.dart';
-// import 'package:hrisv2/ScreenHome/fitness_app_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/util/app_const.dart';
+// import 'package:flutter_human_resources_information_sistem/ScreenHome/fitness_app_home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:imei_plugin/imei_plugin.dart';
 // import 'package:device_info/device_info.dart';
-import 'package:hrisv2/Auth/login.dart';
-//import 'package:hrisv2/OldHRIS/login.dart';
-// import 'package:hrisv2/ScreenHome/fitness_app_home_screen.dart';
-import 'package:hrisv2/ScreenHome/home_hrisv2_screen.dart';
+import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
+//import 'package:flutter_human_resources_information_sistem/OldHRIS/login.dart';
+// import 'package:flutter_human_resources_information_sistem/ScreenHome/fitness_app_home_screen.dart';
+import 'package:flutter_human_resources_information_sistem/ScreenHome/home_hrisv2_screen.dart';
 
 class Splashscreen extends StatefulWidget {
   @override
