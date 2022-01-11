@@ -634,7 +634,7 @@ class _Profile_WorkEksperience_NewState
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }

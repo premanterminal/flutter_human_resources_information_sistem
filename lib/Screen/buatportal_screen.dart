@@ -447,7 +447,7 @@ class _BuatPortalScreenState extends State<BuatPortalScreen>
     );
   }
 
-  void showDemoDialog({BuildContext? context}) {
+  void showDemoDialog({required BuildContext context}) {
     showDialog<dynamic>(
       context: context,
       builder: (BuildContext context) => CalendarPopupView(
@@ -464,7 +464,7 @@ class _BuatPortalScreenState extends State<BuatPortalScreen>
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }
@@ -499,7 +499,9 @@ class _BuatPortalScreenState extends State<BuatPortalScreen>
                     Navigator.of(context).pushReplacement(
                         new MaterialPageRoute(builder: (BuildContext context) {
                       //return new FitnessAppHomeScreen();
-                      return new HomeHRISv2Screen();
+                      return new HomeHRISv2Screen(
+                        animationController: animationController,
+                      );
                     }));
                   },
                   child: Padding(

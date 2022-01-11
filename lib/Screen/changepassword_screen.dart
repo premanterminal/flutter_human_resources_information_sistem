@@ -23,7 +23,7 @@ class ChangePasswordScreen extends StatefulWidget {
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  String newpassword;
+  String? newpassword;
   bool loadingButton = false;
   bool _obscureTextLogin = true;
   //final _key = new GlobalKey<FormState>();
@@ -131,7 +131,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             new_password_confirmation = data['new_password_confirmation'];
           });
         }
-        if (form.validate()) {
+        if (form!.validate()) {
           form.save();
           print('$email, $new_password');
           setState(() {

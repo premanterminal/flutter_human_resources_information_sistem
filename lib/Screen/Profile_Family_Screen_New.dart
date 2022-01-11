@@ -634,7 +634,7 @@ class _Profile_Family_NewState extends State<Profile_Family_New>
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }

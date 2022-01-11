@@ -512,7 +512,7 @@ class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }

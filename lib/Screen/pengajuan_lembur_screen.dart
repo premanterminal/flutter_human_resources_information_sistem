@@ -470,7 +470,7 @@ class _PengajuanLemburScreenState extends State<PengajuanLemburScreen>
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }
@@ -506,7 +506,7 @@ class _PengajuanLemburScreenState extends State<PengajuanLemburScreen>
                         new MaterialPageRoute(builder: (BuildContext context) {
                       //return new FitnessAppHomeScreen();
                       return new HomeHRISv2Screen(
-                        animationController: null,
+                        animationController: animationController,
                       );
                     }));
                   },
