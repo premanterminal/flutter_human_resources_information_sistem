@@ -22,28 +22,30 @@ class TabIconData {
       selectedImagePath: 'assets/images/b&w/all_home.png',
       index: 0,
       isSelected: true,
-      animationController: null,
+      animationController: animationcontroller,
     ),
     TabIconData(
       imagePath: 'assets/images/b&w/all_Attendance.png',
       selectedImagePath: 'assets/images/attendance.png',
       index: 1,
       isSelected: false,
-      animationController: null,
+      animationController: animationcontroller,
     ),
     TabIconData(
       imagePath: 'assets/images/icon-HTRIS-all-KPI-black.png',
       selectedImagePath: 'assets/images/icon-HTRIS-all-KPI.png',
       index: 2,
       isSelected: false,
-      animationController: null,
+      animationController: animationcontroller,
     ),
     TabIconData(
       imagePath: 'assets/images/icon-HTRIS-all-slip-gaji-black.png',
       selectedImagePath: 'assets/images/icon-HTRIS-all-slip-gaji.png',
       index: 3,
       isSelected: false,
-      animationController: null,
+      animationController: animationcontroller,
     ),
   ];
+
+  static get animationcontroller => null;
 }
