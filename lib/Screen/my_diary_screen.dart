@@ -1,23 +1,24 @@
 import 'package:flutter_human_resources_information_sistem/ListView/PengumumanNewest_ListView.dart';
 import 'package:flutter_human_resources_information_sistem/ListView/PengumumanPenting_ListView.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/home_profilesmall_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/title_portalpenting_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/title_Here_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/title_pengumuman_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/home_profilesmall_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_PortalPenting_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_Here_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_Pengumuman_view.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
-import 'package:flutter_human_resources_information_sistem/listview/createdokumen_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/createdokumen_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
-import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 //import 'dart:convert';
 import 'dart:io';
 //import 'package:get/get.dart';
 
 class MyDiaryScreen extends StatefulWidget {
-  const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
+  const MyDiaryScreen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -26,7 +27,7 @@ class MyDiaryScreen extends StatefulWidget {
 
 class _MyDiaryScreenState extends State<MyDiaryScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -49,18 +50,18 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
   void delsession(token) async {
     print('hapus session');
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('isLogin', null);
-    preferences.setInt('id', null);
-    preferences.setString('name', null);
-    preferences.setString('email', null);
-    preferences.setString('email_verified_at', null);
-    preferences.setString('current_team_id', null);
-    preferences.setString('profile_photo_path', null);
-    preferences.setString('created_at', null);
-    preferences.setString('updated_at', null);
-    preferences.setString('role', null);
-    preferences.setString('idDept', null);
-    preferences.setString('dept', null);
+    preferences.setString('isLogin', 'null');
+    preferences.setInt('id', 0);
+    preferences.setString('name', 'null');
+    preferences.setString('email', 'null');
+    preferences.setString('email_verified_at', 'null');
+    preferences.setString('current_team_id', 'null');
+    preferences.setString('profile_photo_path', 'null');
+    preferences.setString('created_at', 'null');
+    preferences.setString('updated_at', 'null');
+    preferences.setString('role', 'null');
+    preferences.setString('idDept', 'null');
+    preferences.setString('dept', 'null');
     try {
       final response =
           await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'logout'), headers: {
@@ -267,7 +268,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

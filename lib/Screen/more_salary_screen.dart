@@ -1,18 +1,19 @@
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
-//import 'package:flutter_human_resources_information_sistem/listview/salaryhome_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view01.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view02.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view03.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view04.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view08.dart';
-import 'package:flutter_human_resources_information_sistem/listview/salary_view06.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
+//import 'package:flutter_human_resources_information_sistem/ListView/salaryhome_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view01.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view02.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view03.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view04.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view08.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/salary_view06.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class MoreGajiScreen extends StatefulWidget {
-  const MoreGajiScreen({Key key, this.animationController}) : super(key: key);
+  const MoreGajiScreen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -21,7 +22,7 @@ class MoreGajiScreen extends StatefulWidget {
 
 class _MoreGajiScreenState extends State<MoreGajiScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -201,7 +202,7 @@ class _MoreGajiScreenState extends State<MoreGajiScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

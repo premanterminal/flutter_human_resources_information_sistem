@@ -1,7 +1,7 @@
-import 'package:flutter_human_resources_information_sistem/listview/profileheaderlist.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/ProfileHeaderList.dart';
 import 'package:flutter_human_resources_information_sistem/Screen/course_info_screen.dart';
 //import 'package:flutter_human_resources_information_sistem/design_course/popular_course_list_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/ProfileDetail_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/ProfileDetail_View.dart';
 import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
@@ -89,9 +89,9 @@ class _ProfileBigScreenState extends State<ProfileBigScreen> {
 
   String gabungket = '';
 
-  DateTime TimeSignIn;
+  DateTime? TimeSignIn;
 
-  String ConvertTimeSignIn;
+  String? ConvertTimeSignIn;
 
   dataclockin(token) async {
     bool cekmasuk = false;

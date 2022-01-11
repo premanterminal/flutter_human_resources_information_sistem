@@ -2,7 +2,7 @@ import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 //import 'package:flutter/services.dart';
-import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 //import 'package:imei_plugin/imei_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +13,7 @@ import 'dart:io';
 //import 'package:http/http.dart' as http;
 
 class ChangePasswordScreen extends StatefulWidget {
-  const ChangePasswordScreen({Key key, this.animationController})
+  const ChangePasswordScreen({Key? key, required this.animationController})
       : super(key: key);
 
   final AnimationController animationController;
@@ -27,7 +27,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   bool loadingButton = false;
   bool _obscureTextLogin = true;
   //final _key = new GlobalKey<FormState>();
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -51,18 +51,18 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   void delsession(token) async {
     print('hapus session');
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('isLogin', null);
-    preferences.setInt('id', null);
-    preferences.setString('name', null);
-    preferences.setString('email', null);
-    preferences.setString('email_verified_at', null);
-    preferences.setString('current_team_id', null);
-    preferences.setString('profile_photo_path', null);
-    preferences.setString('created_at', null);
-    preferences.setString('updated_at', null);
-    preferences.setString('role', null);
-    preferences.setString('idDept', null);
-    preferences.setString('dept', null);
+    preferences.setString('isLogin', 'null');
+    preferences.setInt('id', 0);
+    preferences.setString('name', 'null');
+    preferences.setString('email', 'null');
+    preferences.setString('email_verified_at', 'null');
+    preferences.setString('current_team_id', 'null');
+    preferences.setString('profile_photo_path', 'null');
+    preferences.setString('created_at', 'null');
+    preferences.setString('updated_at', 'null');
+    preferences.setString('role', 'null');
+    preferences.setString('idDept', 'null');
+    preferences.setString('dept', 'null');
     try {
       final response =
           await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'logout'), headers: {

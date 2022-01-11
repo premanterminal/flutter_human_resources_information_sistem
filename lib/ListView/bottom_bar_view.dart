@@ -11,7 +11,10 @@ import 'package:flutter_human_resources_information_sistem/Model/tabIcon_data.da
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
-      {Key key, this.tabIconsList, this.changeIndex, this.addClick})
+      {Key? key,
+      required this.tabIconsList,
+      required this.changeIndex,
+      required this.addClick})
       : super(key: key);
 
   final Function(int index) changeIndex;
@@ -24,7 +27,7 @@ class BottomBarView extends StatefulWidget {
 
 class _BottomBarViewState extends State<BottomBarView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   Widget tabBody = Container(
     color: FitnessAppTheme.background,
   );
@@ -45,7 +48,7 @@ class _BottomBarViewState extends State<BottomBarView>
       children: <Widget>[
         AnimatedBuilder(
           animation: animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return Transform(
               transform: Matrix4.translationValues(0.0, 0.0, 0.0),
               child: PhysicalShape(
@@ -219,7 +222,8 @@ class _BottomBarViewState extends State<BottomBarView>
 }
 
 class TabIcons extends StatefulWidget {
-  const TabIcons({Key key, this.tabIconData, this.removeAllSelect})
+  const TabIcons(
+      {Key? key, required this.tabIconData, required this.removeAllSelect})
       : super(key: key);
 
   final TabIconData tabIconData;

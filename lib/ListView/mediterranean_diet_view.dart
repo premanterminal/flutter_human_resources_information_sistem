@@ -13,14 +13,14 @@ class MediterranesnDietView extends StatelessWidget {
   final Animation animation;
 
   const MediterranesnDietView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(
@@ -350,7 +350,9 @@ class MediterranesnDietView extends StatelessWidget {
                                       Navigator.of(context).push(
                                           new MaterialPageRoute(
                                               builder: (BuildContext context) {
-                                        return new ChangePasswordScreen();
+                                        return new ChangePasswordScreen(
+                                            animationController:
+                                                animationController);
                                         // return new ProfilScreen(
                                         //     animationController:
                                         //         animationController);
@@ -669,7 +671,7 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {

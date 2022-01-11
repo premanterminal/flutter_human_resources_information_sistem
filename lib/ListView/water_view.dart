@@ -5,14 +5,15 @@ class WaterView extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const WaterView({Key key, this.animationController, this.animation})
+  const WaterView(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(

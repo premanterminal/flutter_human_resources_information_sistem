@@ -1,6 +1,6 @@
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/listlembur_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/listlembur_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
@@ -13,7 +13,8 @@ import 'dart:convert';
 import 'dart:io';
 
 class ListlemburScreen extends StatefulWidget {
-  const ListlemburScreen({Key key, this.animationController}) : super(key: key);
+  const ListlemburScreen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -22,7 +23,7 @@ class ListlemburScreen extends StatefulWidget {
 
 class _ListlemburScreenState extends State<ListlemburScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   int currentPage = 0;
   int to = 0;
@@ -32,7 +33,7 @@ class _ListlemburScreenState extends State<ListlemburScreen>
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataLembur;
+  late List dataLembur;
   fnDataLembur(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'lembur'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -394,7 +395,7 @@ class _ListlemburScreenState extends State<ListlemburScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

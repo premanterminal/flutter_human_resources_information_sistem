@@ -10,7 +10,8 @@ import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 class ProfileDetailListView extends StatefulWidget {
-  const ProfileDetailListView({Key key, this.callBack}) : super(key: key);
+  const ProfileDetailListView({Key? key, required this.callBack})
+      : super(key: key);
 
   final Function callBack;
   @override
@@ -19,7 +20,7 @@ class ProfileDetailListView extends StatefulWidget {
 
 class _ProfileDetailListViewState extends State<ProfileDetailListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   @override
   void initState() {
     animationController = AnimationController(
@@ -84,12 +85,14 @@ class _ProfileDetailListViewState extends State<ProfileDetailListView>
 }
 
 class ProfileHeaderModelView extends StatelessWidget {
+  var callBack;
+
   const ProfileHeaderModelView(
-      {Key key,
-      this.category,
-      this.animationController,
-      this.animation,
-      this.callback})
+      {Key? key,
+      required this.category,
+      required this.animationController,
+      required this.animation,
+      required this.callback})
       : super(key: key);
 
   final VoidCallback callback;
@@ -101,7 +104,7 @@ class ProfileHeaderModelView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

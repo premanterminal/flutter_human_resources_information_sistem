@@ -21,6 +21,8 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen> {
   bool islogin = false;
+
+  get animationController => null;
   _getPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.getString('isLogin') == '1') {
@@ -28,7 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
           new MaterialPageRoute(builder: (BuildContext context) {
         //return new Home();
         //return new FitnessAppHomeScreen();
-        return new HomeHRISv2Screen();
+        return new HomeHRISv2Screen(animationController: animationController);
       }));
     } else {
       Navigator.of(context).pushReplacement(

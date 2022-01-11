@@ -1,17 +1,17 @@
 import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
+// import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import 'package:flutter_human_resources_information_sistem/Model/hotel_list_data.dart';
 
 class HotelListView extends StatelessWidget {
   const HotelListView(
-      {Key key,
-      this.hotelData,
-      this.animationController,
-      this.animation,
-      this.callback})
+      {Key? key,
+      required this.hotelData,
+      required this.animationController,
+      required this.animation,
+      required this.callback})
       : super(key: key);
 
   final VoidCallback callback;
@@ -23,7 +23,7 @@ class HotelListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

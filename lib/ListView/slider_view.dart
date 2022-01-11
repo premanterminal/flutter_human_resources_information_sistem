@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
 
 class SliderView extends StatefulWidget {
-  const SliderView({Key key, this.onChangedistValue, this.distValue})
+  const SliderView(
+      {Key? key, required this.onChangedistValue, required this.distValue})
       : super(key: key);
 
   final Function(double) onChangedistValue;
@@ -93,16 +94,16 @@ class CustomThumbShape extends SliderComponentShape {
   void paint(
     PaintingContext context,
     Offset thumbCenter, {
-    Animation<double> activationAnimation,
-    Animation<double> enableAnimation,
-    bool isDiscrete,
-    TextPainter labelPainter,
-    RenderBox parentBox,
-    Size sizeWithOverflow,
-    SliderThemeData sliderTheme,
-    TextDirection textDirection,
-    double textScaleFactor,
-    double value,
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
+    required bool isDiscrete,
+    required TextPainter labelPainter,
+    required RenderBox parentBox,
+    required Size sizeWithOverflow,
+    required SliderThemeData sliderTheme,
+    required TextDirection textDirection,
+    required double textScaleFactor,
+    required double value,
   }) {
     final Canvas canvas = context.canvas;
     final ColorTween colorTween = ColorTween(
@@ -124,7 +125,7 @@ class CustomThumbShape extends SliderComponentShape {
     cPaint..color = Colors.white;
     cPaint..strokeWidth = 14 / 2;
     canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 12, cPaint);
-    cPaint..color = colorTween.evaluate(enableAnimation);
+    cPaint..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 10, cPaint);
   }
 

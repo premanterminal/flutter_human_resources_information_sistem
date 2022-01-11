@@ -27,7 +27,9 @@ import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart'
 
 class CreateDokumenListView extends StatefulWidget {
   const CreateDokumenListView(
-      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
+      {Key? key,
+      required this.mainScreenAnimationController,
+      required this.mainScreenAnimation})
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
@@ -39,7 +41,7 @@ class CreateDokumenListView extends StatefulWidget {
 
 class _CreateDokumenListViewState extends State<CreateDokumenListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<CreateDokumenListData> mealsListData =
       CreateDokumenListData.tabIconsList;
 
@@ -176,7 +178,7 @@ class _CreateDokumenListViewState extends State<CreateDokumenListView>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.mainScreenAnimationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.mainScreenAnimation,
           child: Transform(
@@ -227,7 +229,10 @@ class _CreateDokumenListViewState extends State<CreateDokumenListView>
 
 class CreateDokumenView extends StatefulWidget {
   const CreateDokumenView(
-      {Key key, this.mealsListData, this.animationController, this.animation})
+      {Key? key,
+      required this.mealsListData,
+      required this.animationController,
+      required this.animation})
       : super(key: key);
 
   final CreateDokumenListData mealsListData;
@@ -357,7 +362,7 @@ class _CreateDokumenViewState extends State<CreateDokumenView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: Transform(

@@ -4,7 +4,8 @@ import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 
 class PopularCourseListView extends StatefulWidget {
-  const PopularCourseListView({Key key, this.callBack}) : super(key: key);
+  const PopularCourseListView({Key? key, required this.callBack})
+      : super(key: key);
 
   final Function callBack;
   @override
@@ -13,7 +14,7 @@ class PopularCourseListView extends StatefulWidget {
 
 class _PopularCourseListViewState extends State<PopularCourseListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   @override
   void initState() {
     animationController = AnimationController(
@@ -79,11 +80,11 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
 
 class CategoryView extends StatelessWidget {
   const CategoryView(
-      {Key key,
-      this.category,
-      this.animationController,
-      this.animation,
-      this.callback})
+      {Key? key,
+      required this.category,
+      required this.animationController,
+      required this.animation,
+      required this.callback})
       : super(key: key);
 
   final VoidCallback callback;
@@ -95,7 +96,7 @@ class CategoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

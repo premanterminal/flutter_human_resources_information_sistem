@@ -15,7 +15,8 @@ class ListKehadiranView extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const ListKehadiranView({Key key, this.animationController, this.animation})
+  const ListKehadiranView(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -39,7 +40,7 @@ class _ListKehadiranViewState extends State<ListKehadiranView> {
 
   String prevpageUrl = '';
 
-  List dataKehadiran;
+  late List dataKehadiran;
 
   fnDataKehadiran(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'kehadiran'),
@@ -69,7 +70,7 @@ class _ListKehadiranViewState extends State<ListKehadiranView> {
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlnext,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -98,7 +99,7 @@ class _ListKehadiranViewState extends State<ListKehadiranView> {
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlprev,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -172,7 +173,7 @@ class _ListKehadiranViewState extends State<ListKehadiranView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(
@@ -739,10 +740,11 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
+    // ignore: deprecated_member_use
     List<Color> colorsList = List<Color>();
     if (colors != null) {
       colorsList = colors;

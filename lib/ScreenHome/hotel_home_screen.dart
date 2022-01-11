@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:flutter_human_resources_information_sistem/Listview/calendar_popup_view.dart';
-import 'package:flutter_human_resources_information_sistem/Listview/hotel_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/calendar_popup_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/hotel_list_view.dart';
 import 'package:flutter_human_resources_information_sistem/Model/hotel_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,7 +15,7 @@ class HotelHomeScreen extends StatefulWidget {
 
 class _HotelHomeScreenState extends State<HotelHomeScreen>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<HotelListData> hotelList = HotelListData.hotelList;
   final ScrollController _scrollController = ScrollController();
 
@@ -104,7 +104,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                                               curve: Curves.fastOutSlowIn)));
                               animationController.forward();
                               return HotelListView(
-                                callback: () {},
+                                callBack: () {},
                                 hotelData: hotelList[index],
                                 animation: animation,
                                 animationController: animationController,
@@ -160,7 +160,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       animationController.forward();
 
                       return HotelListView(
-                        callback: () {},
+                        callBack: () {},
                         hotelData: hotelList[index],
                         animation: animation,
                         animationController: animationController,
@@ -189,7 +189,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
       );
       hotelListViews.add(
         HotelListView(
-          callback: () {},
+          callBack: () {},
           hotelData: hotelList[i],
           animation: animation,
           animationController: animationController,
@@ -491,7 +491,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
     );
   }
 
-  void showDemoDialog({BuildContext context}) {
+  void showDemoDialog({required BuildContext context}) {
     showDialog<dynamic>(
       context: context,
       builder: (BuildContext context) => CalendarPopupView(
@@ -508,7 +508,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
             }
           });
         },
-        onCancelClick: () {},
+        onCancelClick: () {}, maximumDate: endDate,
       ),
     );
   }

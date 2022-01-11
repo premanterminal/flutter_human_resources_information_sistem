@@ -1,13 +1,14 @@
-import 'package:flutter_human_resources_information_sistem/listview/area_list_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/running_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/workout_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/area_list_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/running_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/workout_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class ProfilScreen extends StatefulWidget {
-  const ProfilScreen({Key key, this.animationController}) : super(key: key);
+  const ProfilScreen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -16,7 +17,7 @@ class ProfilScreen extends StatefulWidget {
 
 class _ProfilScreenState extends State<ProfilScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -174,7 +175,7 @@ class _ProfilScreenState extends State<ProfilScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

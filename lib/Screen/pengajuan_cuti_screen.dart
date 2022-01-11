@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:ui';
-import 'package:flutter_human_resources_information_sistem/listview/calendar_popup_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/calendar_popup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,7 +18,7 @@ class PengajuanCutiScreen extends StatefulWidget {
 
 class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   // List<HotelListData> hotelList = HotelListData.hotelList;
   final ScrollController _scrollController = ScrollController();
 
@@ -58,8 +58,8 @@ class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
     fnDataPortal(token);
   }
 
-  List cutiList;
-  List dataPortalpengumuman;
+  late List cutiList;
+  late List dataPortalpengumuman;
   fnDataPortal(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'cuti'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -203,7 +203,7 @@ class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
     DateTime end_date = DateTime.parse(end);
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
@@ -495,7 +495,7 @@ class _PengajuanCutiScreenState extends State<PengajuanCutiScreen>
     );
   }
 
-  void showDemoDialog({BuildContext context}) {
+  void showDemoDialog({required BuildContext context}) {
     showDialog<dynamic>(
       context: context,
       builder: (BuildContext context) => CalendarPopupView(

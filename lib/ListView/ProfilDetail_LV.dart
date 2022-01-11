@@ -16,7 +16,8 @@ class ProfilDetailLV extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const ProfilDetailLV({Key key, this.animationController, this.animation})
+  const ProfilDetailLV(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -194,7 +195,7 @@ class _ProfilDetailLVState extends State<ProfilDetailLV> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(

@@ -22,7 +22,7 @@ class _HistoriKehadiranState extends State<HistoriKehadiran> {
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataKehadiran;
+  late List dataKehadiran;
   fnDataKehadiran(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'kehadiran'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -51,7 +51,7 @@ class _HistoriKehadiranState extends State<HistoriKehadiran> {
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlnext,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -80,7 +80,7 @@ class _HistoriKehadiranState extends State<HistoriKehadiran> {
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlprev,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});

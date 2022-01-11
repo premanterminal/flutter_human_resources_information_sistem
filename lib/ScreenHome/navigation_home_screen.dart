@@ -13,8 +13,8 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
-  Widget screenView;
-  DrawerIndex drawerIndex;
+  late Widget screenView;
+  late DrawerIndex drawerIndex;
 
   @override
   void initState() {
@@ -39,7 +39,8 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
               changeIndex(drawerIndexdata);
               //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
             },
-            screenView: screenView,
+            screenView: screenView, drawerIsOpen: (bool) {}, key: null,
+            menuView: null,
             //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
           ),
         ),

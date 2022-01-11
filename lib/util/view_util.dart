@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 Future showAlertDialog(String type, String title, String content,
-    {bool dismissible}) async {
+    {required bool dismissible}) async {
   final List<Widget> actions = type == 'success'
       ? []
       : [
@@ -142,7 +142,7 @@ Color percentageLabelColor(double percentage) {
   return Colors.white;
 }
 
-Color checkStatusColor(String status) {
+Color? checkStatusColor(String status) {
   switch (status) {
     case 'Tidak Hadir':
       return Colors.red[800];

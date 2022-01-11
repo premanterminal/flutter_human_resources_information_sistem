@@ -16,7 +16,7 @@ class PengumumanNewest_ListView extends StatefulWidget {
   final Animation animation;
 
   const PengumumanNewest_ListView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -130,7 +130,7 @@ class _PengumumanNewest_ListViewState extends State<PengumumanNewest_ListView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(

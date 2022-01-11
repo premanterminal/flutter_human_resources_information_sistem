@@ -9,19 +9,19 @@ class TitleView extends StatelessWidget {
   final Animation animation;
 
   const TitleView(
-      {Key key,
+      {Key? key,
       this.titleTxt: "",
       this.subTxt: "",
-      this.animationController,
-      this.iconhere,
-      this.animation})
+      required this.animationController,
+      required this.iconhere,
+      required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(

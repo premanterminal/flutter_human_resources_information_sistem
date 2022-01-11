@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_human_resources_information_sistem/listview/range_slider_view.dart';
-//import 'package:flutter_human_resources_information_sistem/listview/slider_view.dart';
+//import 'package:flutter_human_resources_information_sistem/ListView/range_slider_view.dart';
+//import 'package:flutter_human_resources_information_sistem/ListView/slider_view.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
-import 'package:flutter_human_resources_information_sistem/model/popular_filter_list.dart';
+import 'package:flutter_human_resources_information_sistem/Model/popular_filter_list.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
 //import 'package:dropdownfield/dropdownfield.dart';
@@ -35,7 +35,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     "Cuti Melahirkan",
     "Cuti Khusus"
   ];
-  String _character, pilih, textPilih;
+  String? _character, pilih, textPilih;
   RangeValues _values = const RangeValues(100, 600);
   double distValue = 50.0;
 
@@ -180,7 +180,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             ListTile(
                 title: (textPilih == null)
                     ? const Text('Pilih Type Pengajuan')
-                    : Text(textPilih),
+                    : Text(textPilih!),
                 onTap: () {
                   cek();
                 }),
@@ -376,7 +376,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "01",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "01"),
                       ),
                     ),
                     ListTile(
@@ -391,7 +391,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "02",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "02"),
                       ),
                     ),
                     ListTile(
@@ -406,7 +406,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "03",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "03"),
                       ),
                     ),
                     ListTile(
@@ -421,7 +421,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "04",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "04"),
                       ),
                     ),
                     ListTile(
@@ -436,7 +436,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "05",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "05"),
                       ),
                     ),
                     ListTile(
@@ -451,7 +451,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "06",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "06"),
                       ),
                     ),
                     ListTile(
@@ -466,7 +466,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "07",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "07"),
                       ),
                     ),
                     ListTile(
@@ -481,7 +481,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "08",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "08"),
                       ),
                     ),
                     ListTile(
@@ -496,7 +496,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "09",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "09"),
                       ),
                     ),
                     ListTile(
@@ -511,7 +511,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "10",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "10"),
                       ),
                     ),
                     ListTile(
@@ -526,7 +526,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "11",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "11"),
                       ),
                     ),
                     ListTile(
@@ -541,7 +541,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "12",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "12"),
                       ),
                     ),
                     ListTile(
@@ -556,7 +556,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       leading: Radio(
                         value: "13",
                         groupValue: pilih,
-                        onChanged: (value) => kasihnilai(context, value),
+                        onChanged: (value) => kasihnilai(context, "13"),
                       ),
                     ),
                   ]);

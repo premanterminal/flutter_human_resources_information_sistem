@@ -4,7 +4,7 @@ class CreateDokumenListData {
     this.titleTxt = '',
     this.startColor = '',
     this.endColor = '',
-    this.meals,
+    required this.meals,
     this.kacl = 0,
     this.linkscreen = '',
     this.ID = 0,

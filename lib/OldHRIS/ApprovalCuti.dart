@@ -22,9 +22,9 @@ class _ApprovalCutiState extends State<ApprovalCuti> {
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataCuti;
-  List subdatacuti1;
-  List subdatacuti2;
+  late List dataCuti;
+  late List subdatacuti1;
+  late List subdatacuti2;
   fnDataAppCuti(token) async {
     final response = await http.get(
         Uri.parse(BaseUrl.apiBaseUrl + 'approval/cuti-izin'),

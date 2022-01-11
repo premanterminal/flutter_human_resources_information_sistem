@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:ui';
 //import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
-import 'package:flutter_human_resources_information_sistem/listview/calendar_popup_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/calendar_popup_view.dart';
 import 'package:flutter_human_resources_information_sistem/Model/hotel_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
@@ -20,7 +20,7 @@ class Profile_Family_New extends StatefulWidget {
 
 class _Profile_Family_NewState extends State<Profile_Family_New>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<HotelListData> hotelList = HotelListData.hotelList;
   final ScrollController _scrollController = ScrollController();
 
@@ -61,8 +61,8 @@ class _Profile_Family_NewState extends State<Profile_Family_New>
     fnDataPortal(token);
   }
 
-  List familyList;
-  List dataPortalpengumuman;
+  late List familyList;
+  late List dataPortalpengumuman;
   fnDataPortal(token) async {
     final response = await http.get(
         Uri.parse(BaseUrl.apiBaseUrl + 'profile/family-member'),
@@ -191,7 +191,7 @@ class _Profile_Family_NewState extends State<Profile_Family_New>
     // DateTime end_date = DateTime.parse(end);
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
@@ -617,7 +617,7 @@ class _Profile_Family_NewState extends State<Profile_Family_New>
     );
   }
 
-  void showDemoDialog({BuildContext context}) {
+  void showDemoDialog({required BuildContext context}) {
     showDialog<dynamic>(
       context: context,
       builder: (BuildContext context) => CalendarPopupView(

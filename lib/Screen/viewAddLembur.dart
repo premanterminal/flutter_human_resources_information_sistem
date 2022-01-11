@@ -5,11 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Model/category.dart';
 import 'package:flutter_human_resources_information_sistem/Theme/hotel_app_theme.dart';
-import 'package:flutter_human_resources_information_sistem/model/popular_filter_list.dart';
+import 'package:flutter_human_resources_information_sistem/Model/popular_filter_list.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_lembur_screen.dart';
@@ -21,7 +21,7 @@ class AddLembur extends StatefulWidget {
 
 class _AddLemburState extends State<AddLembur> {
   // SingingCharacter _character = SingingCharacter.kerja;
-  String ket,
+  String? ket,
       end_date,
       start_date,
       dropdownValue,
@@ -342,7 +342,7 @@ class _AddLemburState extends State<AddLembur> {
           padding: const EdgeInsets.only(right: 16, left: 16),
           child: TextFormField(
             controller: ketController,
-            onSaved: (String val) {
+            onSaved: (String? val) {
               ket = val;
             },
             keyboardType: TextInputType.multiline,
@@ -391,7 +391,7 @@ class _AddLemburState extends State<AddLembur> {
                 groupValue: _character,
                 onChanged: (value) {
                   setState(() {
-                    _character = value;
+                    _character = value as String?;
                   });
                 },
               ),
@@ -403,7 +403,7 @@ class _AddLemburState extends State<AddLembur> {
                 groupValue: _character,
                 onChanged: (value) {
                   setState(() {
-                    _character = value;
+                    _character = value as String?;
                   });
                 },
               ),
@@ -594,7 +594,7 @@ class _AddLemburState extends State<AddLembur> {
   cek_filedLembur() {
     FocusScope.of(context).requestFocus(new FocusNode());
     final form = _key.currentState;
-    if (form.validate()) {
+    if (form!.validate()) {
       form.save();
       //showInSnackBar('email dan Password tidak sesuai');
       print('test');

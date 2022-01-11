@@ -16,7 +16,8 @@ class ProfilFamilyLV extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const ProfilFamilyLV({Key key, this.animationController, this.animation})
+  const ProfilFamilyLV(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -207,7 +208,7 @@ class _ProfilFamilyLVState extends State<ProfilFamilyLV> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(

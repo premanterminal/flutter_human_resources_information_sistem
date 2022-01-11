@@ -1,9 +1,9 @@
 import 'package:flutter_human_resources_information_sistem/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_human_resources_information_sistem/model/homelist.dart';
+import 'package:flutter_human_resources_information_sistem/Model/homelist.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -11,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   List<HomeList> homeList = HomeList.homeList;
-  AnimationController animationController;
+  late AnimationController animationController;
   bool multiple = true;
 
   @override
@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    animationController.dispose();
+    animationController!.dispose();
     super.dispose();
   }
 
@@ -172,11 +172,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
 class HomeListView extends StatelessWidget {
   const HomeListView(
-      {Key key,
-      this.listData,
-      this.callBack,
-      this.animationController,
-      this.animation})
+      {Key? key,
+      required this.listData,
+      required this.callBack,
+      required this.animationController,
+      required this.animation})
       : super(key: key);
 
   final HomeList listData;
@@ -188,7 +188,7 @@ class HomeListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

@@ -1,5 +1,5 @@
-import 'package:flutter_human_resources_information_sistem/listview/ProfilFamily_LV.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/ProfilFamily_LV.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
@@ -13,7 +13,7 @@ import 'dart:io';
 import 'package:flutter_human_resources_information_sistem/Auth/login.dart';
 
 class ProfilFamilyScreen extends StatefulWidget {
-  const ProfilFamilyScreen({Key key, this.animationController})
+  const ProfilFamilyScreen({Key? key, required this.animationController})
       : super(key: key);
 
   final AnimationController animationController;
@@ -23,7 +23,7 @@ class ProfilFamilyScreen extends StatefulWidget {
 
 class _ProfilFamilyScreenState extends State<ProfilFamilyScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -46,18 +46,18 @@ class _ProfilFamilyScreenState extends State<ProfilFamilyScreen>
   void delsession(token) async {
     print('hapus session');
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('isLogin', null);
-    preferences.setInt('id', null);
-    preferences.setString('name', null);
-    preferences.setString('email', null);
-    preferences.setString('email_verified_at', null);
-    preferences.setString('current_team_id', null);
-    preferences.setString('profile_photo_path', null);
-    preferences.setString('created_at', null);
-    preferences.setString('updated_at', null);
-    preferences.setString('role', null);
-    preferences.setString('idDept', null);
-    preferences.setString('dept', null);
+    preferences.setString('isLogin', 'null');
+    preferences.setInt('id', 0);
+    preferences.setString('name', 'null');
+    preferences.setString('email', 'null');
+    preferences.setString('email_verified_at', 'null');
+    preferences.setString('current_team_id', 'null');
+    preferences.setString('profile_photo_path', 'null');
+    preferences.setString('created_at', 'null');
+    preferences.setString('updated_at', 'null');
+    preferences.setString('role', 'null');
+    preferences.setString('idDept', 'null');
+    preferences.setString('dept', 'null');
     try {
       final response =
           await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'logout'), headers: {
@@ -198,7 +198,7 @@ class _ProfilFamilyScreenState extends State<ProfilFamilyScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

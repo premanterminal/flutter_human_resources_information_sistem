@@ -1,7 +1,7 @@
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_human_resources_information_sistem/Screen/portalpenting_screen.dart';
-import 'package:flutter_human_resources_information_sistem/OldHRIS/portal.dart';
+import 'package:flutter_human_resources_information_sistem/OldHRIS/Portal.dart';
 
 class TitlePortalPentingView extends StatelessWidget {
   final IconData iconhere;
@@ -11,19 +11,19 @@ class TitlePortalPentingView extends StatelessWidget {
   final Animation animation;
 
   const TitlePortalPentingView(
-      {Key key,
+      {Key? key,
       this.titleTxt: "",
       this.subTxt: "",
-      this.animationController,
-      this.iconhere,
-      this.animation})
+      required this.animationController,
+      required this.iconhere,
+      required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(

@@ -5,11 +5,12 @@ import 'package:flutter_human_resources_information_sistem/Model/ProfileHeaderMo
 import 'package:flutter_human_resources_information_sistem/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Screen/gaji_screen.dart';
-import 'package:flutter_human_resources_information_sistem/Screen/KPIScreen.dart';
+import 'package:flutter_human_resources_information_sistem/Screen/KPIscreen.dart';
 import 'package:flutter_human_resources_information_sistem/Screen/changepassword_screen.dart';
 
 class ProfileHeaderListView extends StatefulWidget {
-  const ProfileHeaderListView({Key key, this.callBack}) : super(key: key);
+  const ProfileHeaderListView({Key? key, required this.callBack})
+      : super(key: key);
 
   final Function callBack;
   @override
@@ -18,7 +19,7 @@ class ProfileHeaderListView extends StatefulWidget {
 
 class _ProfileHeaderListViewState extends State<ProfileHeaderListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
 
   @override
   void initState() {
@@ -88,11 +89,11 @@ class _ProfileHeaderListViewState extends State<ProfileHeaderListView>
 
 class ProfileHeaderView extends StatelessWidget {
   const ProfileHeaderView(
-      {Key key,
-      this.category,
-      this.animationController,
-      this.animation,
-      this.callback})
+      {Key? key,
+      required this.category,
+      required this.animationController,
+      required this.animation,
+      required this.callback})
       : super(key: key);
 
   final VoidCallback callback;
@@ -104,7 +105,7 @@ class ProfileHeaderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

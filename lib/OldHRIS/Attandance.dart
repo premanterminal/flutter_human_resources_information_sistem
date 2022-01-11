@@ -97,9 +97,9 @@ class _AttandanceState extends State<Attandance> {
 
   String gabungket = '';
 
-  DateTime TimeSignIn;
+  late DateTime TimeSignIn;
 
-  String ConvertTimeSignIn;
+  late String ConvertTimeSignIn;
 
   dataclockin(token) async {
     bool cekmasuk = false;
@@ -283,7 +283,7 @@ class _AttandanceState extends State<Attandance> {
         msg: message,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        timeInSecForIos: 1,
+        timeInSecForIosWeb: 1,
         backgroundColor: Colors.red,
         textColor: Colors.white,
         fontSize: 16.0);

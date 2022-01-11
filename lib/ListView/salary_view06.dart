@@ -6,14 +6,15 @@ class Salary06View extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const Salary06View({Key key, this.animationController, this.animation})
+  const Salary06View(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(

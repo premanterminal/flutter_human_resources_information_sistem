@@ -52,8 +52,8 @@ class _PortalState extends State<Portal> {
     fnDataPortal(token);
   }
 
-  List dataPortalPenting;
-  List dataPortalpengumuman;
+  late List dataPortalPenting;
+  late List dataPortalpengumuman;
   fnDataPortal(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'portal'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});

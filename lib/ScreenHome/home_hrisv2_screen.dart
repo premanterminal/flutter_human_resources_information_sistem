@@ -18,7 +18,8 @@ import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_lemb
 // import 'package:flutter_human_resources_information_sistem/invite_friend_screen.dart';
 
 class HomeHRISv2Screen extends StatefulWidget {
-  const HomeHRISv2Screen({Key key, this.animationController}) : super(key: key);
+  const HomeHRISv2Screen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
 
@@ -28,7 +29,7 @@ class HomeHRISv2Screen extends StatefulWidget {
 
 class _HomeHRISv2ScreenState extends State<HomeHRISv2Screen>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
 
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
 

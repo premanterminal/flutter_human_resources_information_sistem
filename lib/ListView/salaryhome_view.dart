@@ -18,7 +18,8 @@ class SalaryHomeView extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const SalaryHomeView({Key key, this.animationController, this.animation})
+  const SalaryHomeView(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -119,7 +120,7 @@ class _SalaryHomeViewState extends State<SalaryHomeView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(
@@ -172,7 +173,7 @@ class _SalaryHomeViewState extends State<SalaryHomeView> {
                           textAlign: TextAlign.left,
                           style: Theme.of(context)
                               .textTheme
-                              .button
+                              .button!
                               .copyWith(color: Colors.white),
                         ),
                       ),

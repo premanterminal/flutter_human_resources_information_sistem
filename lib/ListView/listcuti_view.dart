@@ -15,7 +15,8 @@ class ListCutiView extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const ListCutiView({Key key, this.animationController, this.animation})
+  const ListCutiView(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -39,7 +40,7 @@ class _ListCutiViewState extends State<ListCutiView> {
 
   String prevpageUrl = '';
 
-  List dataCuti;
+  late List dataCuti;
 
   fnDataCuti(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'cuti'),
@@ -281,7 +282,7 @@ class _ListCutiViewState extends State<ListCutiView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(
@@ -848,7 +849,7 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {

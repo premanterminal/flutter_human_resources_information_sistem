@@ -1,17 +1,18 @@
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/menutambahlembur_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/menutambahportal_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/menutambahcuti_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/menutambahappvcuti_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/menutambahappvlembur_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/menutambahlembur_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/menutambahportal_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/menutambahcuti_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/menutambahappvcuti_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/menutambahappvlembur_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
 
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
 
 class ListtambahScreen extends StatefulWidget {
-  const ListtambahScreen({Key key, this.changeIndex, this.animationController})
+  const ListtambahScreen(
+      {Key? key, required this.changeIndex, required this.animationController})
       : super(key: key);
 
   final AnimationController animationController;
@@ -22,7 +23,7 @@ class ListtambahScreen extends StatefulWidget {
 
 class _ListtambahScreenState extends State<ListtambahScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -199,7 +200,7 @@ class _ListtambahScreenState extends State<ListtambahScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

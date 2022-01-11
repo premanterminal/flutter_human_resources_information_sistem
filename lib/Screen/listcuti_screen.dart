@@ -1,6 +1,6 @@
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/listcuti_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/glass_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/listcuti_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/glass_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_theme.dart';
@@ -14,7 +14,8 @@ import 'dart:convert';
 import 'dart:io';
 
 class ListcutiScreen extends StatefulWidget {
-  const ListcutiScreen({Key key, this.animationController}) : super(key: key);
+  const ListcutiScreen({Key? key, required this.animationController})
+      : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -23,7 +24,7 @@ class ListcutiScreen extends StatefulWidget {
 
 class _ListcutiScreenState extends State<ListcutiScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
 
   int currentPage = 0;
   int to = 0;
@@ -33,7 +34,7 @@ class _ListcutiScreenState extends State<ListcutiScreen>
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataCuti;
+  late List dataCuti;
   fnDataCuti(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'cuti'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -390,7 +391,7 @@ class _ListcutiScreenState extends State<ListcutiScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

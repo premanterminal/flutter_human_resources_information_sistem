@@ -1,5 +1,5 @@
-import 'package:flutter_human_resources_information_sistem/listview/listkehadiran_view.dart';
-import 'package:flutter_human_resources_information_sistem/listview/title_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/listkehadiran_view.dart';
+import 'package:flutter_human_resources_information_sistem/ListView/title_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
@@ -11,7 +11,7 @@ import 'dart:convert';
 import 'dart:io';
 
 class ListkehadiranScreen extends StatefulWidget {
-  const ListkehadiranScreen({Key key, this.animationController})
+  const ListkehadiranScreen({Key? key, required this.animationController})
       : super(key: key);
 
   final AnimationController animationController;
@@ -21,7 +21,7 @@ class ListkehadiranScreen extends StatefulWidget {
 
 class _ListkehadiranScreenState extends State<ListkehadiranScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  late Animation<double> topBarAnimation;
   int currentPage = 0;
   int to = 0;
   int total = 0;
@@ -30,7 +30,7 @@ class _ListkehadiranScreenState extends State<ListkehadiranScreen>
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataKehadiran;
+  late List dataKehadiran;
   fnDataKehadiran(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'kehadiran'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -59,7 +59,7 @@ class _ListkehadiranScreenState extends State<ListkehadiranScreen>
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlnext,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -88,7 +88,7 @@ class _ListkehadiranScreenState extends State<ListkehadiranScreen>
       return;
     }
     setState(() {
-      dataKehadiran = null;
+      dataKehadiran;
     });
     final response = await http.get(urlprev,
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});
@@ -399,7 +399,7 @@ class _ListkehadiranScreenState extends State<ListkehadiranScreen>
       children: <Widget>[
         AnimatedBuilder(
           animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(

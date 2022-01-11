@@ -22,7 +22,7 @@ class _CutiState extends State<Cuti> {
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataCuti;
+  late List dataCuti;
   fnDataCuti(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'cuti'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});

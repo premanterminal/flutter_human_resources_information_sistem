@@ -16,7 +16,8 @@ class ProfilEdLV extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const ProfilEdLV({Key key, this.animationController, this.animation})
+  const ProfilEdLV(
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -202,7 +203,7 @@ class _ProfilEdLVState extends State<ProfilEdLV> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(

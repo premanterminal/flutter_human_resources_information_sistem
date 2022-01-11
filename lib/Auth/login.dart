@@ -2,7 +2,7 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:flutter_human_resources_information_sistem/network/baseUrl.dart';
+import 'package:flutter_human_resources_information_sistem/Network/baseUrl.dart';
 import 'package:flutter_human_resources_information_sistem/util/view_util.dart';
 import 'package:imei_plugin/imei_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,10 +34,12 @@ class _LoginState extends State<Login> {
   TextEditingController emailController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
 
+  get animationController => null;
+
   checkLogin() {
     FocusScope.of(context).requestFocus(new FocusNode());
     final form = _key.currentState;
-    if (form.validate()) {
+    if (form!.validate()) {
       form.save();
       //showInSnackBar('email dan Password tidak sesuai');
       print('$email, $password');
@@ -48,11 +50,11 @@ class _LoginState extends State<Login> {
     }
   }
 
-  String hardware;
-  String imeiNo;
-  String modelName;
-  String manufacturer;
-  String host;
+  String? hardware;
+  String? imeiNo;
+  String? modelName;
+  String? manufacturer;
+  String? host;
   getImei() async {
     imeiNo = await ImeiPlugin.getImei();
     // List<String> multiImei =
@@ -135,7 +137,7 @@ class _LoginState extends State<Login> {
         Navigator.of(context).pushReplacement(
             new MaterialPageRoute(builder: (BuildContext context) {
           //return new FitnessAppHomeScreen();
-          return new HomeHRISv2Screen();
+          return new HomeHRISv2Screen(animationController: animationController);
         }));
       } else if (response.statusCode == 401) {
         print('masuk sini salah apssword');
@@ -194,7 +196,7 @@ class _LoginState extends State<Login> {
   void delsession() async {
     print('hapus session');
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('isLogin', null);
+    preferences.setString('isLogin', 'null');
   }
 
   @override
@@ -207,15 +209,15 @@ class _LoginState extends State<Login> {
 
   Widget _buildEmailForm() {
     return TextFormField(
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Email tidak boleh kosong!';
         }
         return null;
       },
       controller: emailController,
-      onSaved: (String val) {
-        email = val;
+      onSaved: (String? val) {
+        email = val!;
       },
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.emailAddress,
@@ -234,15 +236,15 @@ class _LoginState extends State<Login> {
 
   Widget _buildPasswordForm() {
     return TextFormField(
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Kata sandi tidak boleh kosong!';
         }
         return null;
       },
       obscureText: _obscureTextLogin,
-      onSaved: (String val) {
-        password = val;
+      onSaved: (String? val) {
+        password = val!;
       },
       controller: passwordController,
       keyboardType: TextInputType.text,

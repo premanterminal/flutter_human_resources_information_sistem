@@ -16,7 +16,7 @@ class PengumumanPenting_Listview extends StatefulWidget {
   final Animation animation;
 
   const PengumumanPenting_Listview(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -131,7 +131,7 @@ class _PengumumanPenting_ListviewState
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(

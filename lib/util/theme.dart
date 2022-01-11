@@ -2,24 +2,22 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-class CustomAppTheme{
+class CustomAppTheme {
+  late ThemeData _themeData;
 
-  ThemeData _themeData;
-
-  CustomAppTheme(){
+  CustomAppTheme() {
     this._themeData = _buildFormAppTheme();
   }
 
-  ThemeData get data{
+  ThemeData get data {
     return _themeData;
   }
 
-  ThemeData _buildFormAppTheme(){
-
+  ThemeData _buildFormAppTheme() {
     final ThemeData base = ThemeData.light();
 
     return base.copyWith(
-      accentColor:  mRegistrationBlack,
+      accentColor: mRegistrationBlack,
       primaryColor: mRegistrationBlack,
       scaffoldBackgroundColor: mFormWhite,
       cardColor: mFormWhite,
@@ -30,49 +28,40 @@ class CustomAppTheme{
       primaryIconTheme: base.iconTheme.copyWith(color: mRegistrationBlack),
       unselectedWidgetColor: mRegistrationBlack,
     );
-
   }
 
-  TextTheme _buildFormAppTextTheme(TextTheme base)
-  {
+  TextTheme _buildFormAppTextTheme(TextTheme base) {
     return base.copyWith(
-
-      headline: base.headline.copyWith(
+      headline: base.headline!.copyWith(
         fontFamily: 'Cookie',
         fontSize: 36.0,
         color: mRegistrationBlack,
       ),
-      title: base.title.copyWith(
+      title: base.title!.copyWith(
         fontFamily: 'DINOT',
         fontSize: 18.0,
         color: mRegistrationBlack,
       ),
-
-      subtitle: base.subtitle.copyWith(
+      subtitle: base.subtitle!.copyWith(
         fontFamily: 'DINOT',
         fontSize: 14.0,
         color: mRegistrationBlack,
       ),
-
-      caption: base.caption.copyWith(
+      caption: base.caption!.copyWith(
         fontFamily: 'DancingsScript',
         fontSize: 50.0,
         color: mRegistrationBlack,
       ),
-
-      display1: base.display1.copyWith(
+      display1: base.display1!.copyWith(
         fontFamily: 'DancingsScript',
         fontSize: 14.0,
         color: mRegistrationBlack,
       ),
-
-      button: base.button.copyWith(
+      button: base.button!.copyWith(
         fontFamily: 'DancingsScript',
         fontSize: 14.0,
         color: mFormWhite,
       ),
-
     );
-
   }
 }

@@ -16,21 +16,21 @@ import 'package:google_maps_utils/poly_utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:camera/camera.dart';
-import '../network/baseUrl.dart';
+import '../Network/baseUrl.dart';
 
 class MapsClock extends StatefulWidget {
   final String clockket;
-  MapsClock({this.clockket});
+  MapsClock({required this.clockket});
   @override
   _MapsClockState createState() => _MapsClockState();
 }
 
 class _MapsClockState extends State<MapsClock> {
-  GoogleMapController _controller;
+  late GoogleMapController _controller;
   //CameraDescription cameraDescription;
   bool _loading = false;
-  Position position;
-  Widget _child;
+  Position? position;
+  Widget? _child;
   bool aksesclockin = false;
   Future<void> getLocation() async {
     PermissionStatus permission = await PermissionHandler()

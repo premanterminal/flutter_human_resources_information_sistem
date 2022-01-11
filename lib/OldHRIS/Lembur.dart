@@ -22,7 +22,7 @@ class _LemburState extends State<Lembur> {
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataLembur;
+  late List dataLembur;
   fnDataLembur(token) async {
     final response = await http.get(Uri.parse(BaseUrl.apiBaseUrl + 'lembur'),
         headers: {HttpHeaders.authorizationHeader: "Bearer " + token});

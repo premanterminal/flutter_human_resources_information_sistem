@@ -22,9 +22,9 @@ class _ApprovalLemburState extends State<ApprovalLembur> {
   int perPage = 0;
   String nextpageUrl = '';
   String prevpageUrl = '';
-  List dataLembur;
-  List subdatalembur1;
-  List subdatalembur2;
+  late List dataLembur;
+  late List subdatalembur1;
+  late List subdatalembur2;
   fnDataAppLembur(token) async {
     final response = await http.get(
         Uri.parse(BaseUrl.apiBaseUrl + 'approval/lembur'),

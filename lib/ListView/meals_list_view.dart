@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 
 class MealsListView extends StatefulWidget {
   const MealsListView(
-      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
+      {Key? key,
+      required this.mainScreenAnimationController,
+      required this.mainScreenAnimation})
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
@@ -19,7 +21,7 @@ class MealsListView extends StatefulWidget {
 
 class _MealsListViewState extends State<MealsListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<MealsListData> mealsListData = MealsListData.tabIconsList;
 
   @override
@@ -44,7 +46,7 @@ class _MealsListViewState extends State<MealsListView>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.mainScreenAnimationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.mainScreenAnimation,
           child: Transform(
@@ -86,7 +88,10 @@ class _MealsListViewState extends State<MealsListView>
 
 class MealsView extends StatelessWidget {
   const MealsView(
-      {Key key, this.mealsListData, this.animationController, this.animation})
+      {Key? key,
+      required this.mealsListData,
+      required this.animationController,
+      required this.animation})
       : super(key: key);
 
   final MealsListData mealsListData;
@@ -97,7 +102,7 @@ class MealsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(

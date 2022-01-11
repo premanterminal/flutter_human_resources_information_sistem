@@ -29,7 +29,7 @@ class HomeProfileSmallView extends StatefulWidget {
   final AnimationController animationController;
   final Animation animation;
   const HomeProfileSmallView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -102,9 +102,9 @@ class _HomeProfileSmallViewState extends State<HomeProfileSmallView> {
 
   String gabungket = '';
 
-  DateTime TimeSignIn;
+  DateTime? TimeSignIn;
 
-  String ConvertTimeSignIn;
+  String? ConvertTimeSignIn;
 
   String jlh_cuti = '';
 
@@ -197,7 +197,7 @@ class _HomeProfileSmallViewState extends State<HomeProfileSmallView> {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.animation,
           child: new Transform(
@@ -588,10 +588,11 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
+    // ignore: deprecated_member_use
     List<Color> colorsList = List<Color>();
     if (colors != null) {
       colorsList = colors;

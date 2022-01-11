@@ -4,7 +4,9 @@ import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_the
 
 class AreaListView extends StatefulWidget {
   const AreaListView(
-      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
+      {Key? key,
+      required this.mainScreenAnimationController,
+      required this.mainScreenAnimation})
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
@@ -15,7 +17,7 @@ class AreaListView extends StatefulWidget {
 
 class _AreaListViewState extends State<AreaListView>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<String> areaListData = <String>[
     'assets/fitness_app/area1.png',
     'assets/fitness_app/area2.png',
@@ -40,7 +42,7 @@ class _AreaListViewState extends State<AreaListView>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: widget.mainScreenAnimationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: widget.mainScreenAnimation,
           child: Transform(
@@ -93,10 +95,10 @@ class _AreaListViewState extends State<AreaListView>
 
 class AreaView extends StatelessWidget {
   const AreaView({
-    Key key,
-    this.imagepath,
-    this.animationController,
-    this.animation,
+    Key? key,
+    required this.imagepath,
+    required this.animationController,
+    required this.animation,
   }) : super(key: key);
 
   final String imagepath;
@@ -107,7 +109,7 @@ class AreaView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
