@@ -60,6 +60,7 @@ dependencies:
   introduction_screen: ^2.1.0
   datetime_picker_formfield: ^2.0.0
   dropdownfield: ^1.0.3
+  flutter_html: ^2.2.1
 
 dev_dependencies:
   flutter_test:

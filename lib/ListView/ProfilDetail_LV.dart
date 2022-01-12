@@ -720,11 +720,11 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = <Color>[];
     if (colors != null) {
       colorsList = colors;
     } else {

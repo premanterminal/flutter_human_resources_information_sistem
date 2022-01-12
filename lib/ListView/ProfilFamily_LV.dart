@@ -414,7 +414,7 @@ class _ProfilFamilyLVState extends State<ProfilFamilyLV> {
                             padding: const EdgeInsets.only(right: 16),
                             child: Center(
                               child: Stack(
-                                overflow: Overflow.visible,
+                                clipBehavior: Clip.none,
                                 children: <Widget>[
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -925,11 +925,11 @@ class CurvePainter extends CustomPainter {
   final double angle;
   final List<Color> colors;
 
-  CurvePainter({this.colors, this.angle = 140});
+  CurvePainter({required this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = <Color>[];
     if (colors != null) {
       colorsList = colors;
     } else {
@@ -1006,8 +1006,9 @@ class CurvePainter extends CustomPainter {
     );
 
     var cPaint = new Paint();
-    cPaint..shader = gradient1.createShader(rect);
-    cPaint..color = Colors.white;
+    cPaint.shader = gradient1.createShader(rect);
+    cPaint.color = Colors.white;
+    // ignore: avoid_single_cascade_in_expression_statements
     cPaint..strokeWidth = 14 / 2;
     canvas.save();
 
