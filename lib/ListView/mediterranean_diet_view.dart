@@ -58,8 +58,7 @@ class MediterranesnDietView extends StatelessWidget {
                                 children: <Widget>[
                                   Text(
                                     DateFormat('EEEE, d MMMM y')
-                                            .format(DateTime.now()) ??
-                                        "",
+                                        .format(DateTime.now()),
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
                                       fontWeight: FontWeight.w500,
@@ -675,7 +674,7 @@ class CurvePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = <Color>[];
     if (colors != null) {
       colorsList = colors;
     } else {

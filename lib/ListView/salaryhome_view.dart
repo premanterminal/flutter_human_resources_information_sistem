@@ -167,9 +167,7 @@ class _SalaryHomeViewState extends State<SalaryHomeView> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
-                          NumberFormat.currency(locale: 'id')
-                                  .format(take_home) ??
-                              "",
+                          NumberFormat.currency(locale: 'id').format(take_home),
                           textAlign: TextAlign.left,
                           style: Theme.of(context)
                               .textTheme

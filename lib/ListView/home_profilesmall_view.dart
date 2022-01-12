@@ -235,10 +235,9 @@ class _HomeProfileSmallViewState extends State<HomeProfileSmallView> {
                                 children: <Widget>[
                                   Text(
                                     DateFormat('EEEE, d MMMM yyyy ')
-                                                .format(DateTime.now()) +
-                                            '\nTotal Cuti: ' +
-                                            jlh_cuti ??
-                                        "",
+                                            .format(DateTime.now()) +
+                                        '\nTotal Cuti: ' +
+                                        jlh_cuti,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
                                       fontWeight: FontWeight.w500,
@@ -593,7 +592,7 @@ class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // ignore: deprecated_member_use
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = <Color>[];
     if (colors != null) {
       colorsList = colors;
     } else {

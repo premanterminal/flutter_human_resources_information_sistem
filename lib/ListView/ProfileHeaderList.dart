@@ -35,7 +35,7 @@ class _ProfileHeaderListViewState extends State<ProfileHeaderListView>
 
   @override
   void dispose() {
-    animationController?.dispose();
+    animationController.dispose();
     super.dispose();
   }
 

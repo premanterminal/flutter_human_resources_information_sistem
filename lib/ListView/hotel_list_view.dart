@@ -220,3 +220,11 @@ class HotelListView extends StatelessWidget {
     );
   }
 }
+
+SmoothStarRating(
+    {bool? allowHalfRating,
+    int? starCount,
+    double? rating,
+    int? size,
+    Color? color,
+    Color? borderColor}) {}
