@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter_human_resources_information_sistem/Theme/design_course_app_theme.dart';
 // import 'package:flutter_human_resources_information_sistem/Screen/emptydata_screen.dart';
 import 'package:flutter_human_resources_information_sistem/Screen/ProfilDetailscreen.dart';

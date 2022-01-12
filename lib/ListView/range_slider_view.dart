@@ -132,7 +132,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     );
 
     final double size = _thumbSize * sizeTween.evaluate(enableAnimation!);
-    Path thumbPath;
+    Path? thumbPath;
     switch (textDirection) {
       case TextDirection.rtl:
         switch (thumb) {
@@ -172,7 +172,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
     cPaint..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
-    canvas.drawPath(thumbPath, Paint()..color = Colors.white);
+    canvas.drawPath(thumbPath!, Paint()..color = Colors.white);
   }
 
   double convertRadiusToSigma(double radius) {
@@ -180,9 +180,9 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
   }
 
   Path _rightTriangle(double size, Offset thumbCenter, {bool invert = false}) {
-    final Path thumbPath = Path();
+    final Path? thumbPath = Path();
     final double sign = invert ? -1.0 : 1.0;
-    thumbPath.moveTo(thumbCenter.dx + 5 * sign, thumbCenter.dy);
+    thumbPath!.moveTo(thumbCenter.dx + 5 * sign, thumbCenter.dy);
     thumbPath.lineTo(thumbCenter.dx - 3 * sign, thumbCenter.dy - 5);
     thumbPath.lineTo(thumbCenter.dx - 3 * sign, thumbCenter.dy + 5);
     thumbPath.close();
