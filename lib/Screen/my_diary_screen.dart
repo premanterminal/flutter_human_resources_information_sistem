@@ -163,6 +163,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             curve:
                 Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
+        iconhere: Icons.add,
       ),
     );
 
@@ -184,6 +185,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             curve:
                 Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
+        iconhere: Icons.add,
       ),
     );
 

@@ -61,14 +61,15 @@ class _PortalpentingScreenState extends State<PortalpentingScreen>
 
     listViews.add(
       TitleView(
-        titleTxt: 'Pengumuman Penting',
-        subTxt: 'Details',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
+          titleTxt: 'Pengumuman Penting',
+          subTxt: 'Details',
+          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(
+                  parent: widget.animationController,
+                  curve: Interval((1 / count) * 0, 1.0,
+                      curve: Curves.fastOutSlowIn))),
+          animationController: widget.animationController,
+          iconhere: Icons.add),
     );
 
     listViews.add(
@@ -99,6 +100,7 @@ class _PortalpentingScreenState extends State<PortalpentingScreen>
             curve:
                 Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
+        iconhere: Icons.add,
       ),
     );
 

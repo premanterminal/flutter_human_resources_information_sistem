@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    animationController!.dispose();
+    animationController.dispose();
     super.dispose();
   }
 
