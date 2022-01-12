@@ -32,18 +32,19 @@ class CustomAppTheme {
 
   TextTheme _buildFormAppTextTheme(TextTheme base) {
     var headline;
+    var title;
     return base.copyWith(
       headline1: base.headline1!.copyWith(
         fontFamily: 'Cookie',
         fontSize: 36.0,
         color: mRegistrationBlack,
       ),
-      title: base.title!.copyWith(
+      headline6: base.headline6!.copyWith(
         fontFamily: 'DINOT',
         fontSize: 18.0,
         color: mRegistrationBlack,
       ),
-      subtitle: base.subtitle!.copyWith(
+      subtitle1: base.subtitle1!.copyWith(
         fontFamily: 'DINOT',
         fontSize: 14.0,
         color: mRegistrationBlack,
@@ -53,7 +54,7 @@ class CustomAppTheme {
         fontSize: 50.0,
         color: mRegistrationBlack,
       ),
-      display1: base.display1!.copyWith(
+      headline4: base.headline4!.copyWith(
         fontFamily: 'DancingsScript',
         fontSize: 14.0,
         color: mRegistrationBlack,
