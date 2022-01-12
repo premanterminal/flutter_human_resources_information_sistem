@@ -8,7 +8,7 @@ class TitlePortalPentingView extends StatelessWidget {
   final String titleTxt;
   final String subTxt;
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const TitlePortalPentingView(
       {Key? key,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class BodyMeasurementView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const BodyMeasurementView(
       {Key? key, required this.animationController, required this.animation})

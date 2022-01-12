@@ -16,7 +16,7 @@ import 'package:intl/intl.dart';
 
 class SalaryHomeView extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const SalaryHomeView(
       {Key? key, required this.animationController, required this.animation})

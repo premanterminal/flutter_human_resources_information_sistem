@@ -27,7 +27,7 @@ import 'package:http/http.dart' as http;
 
 class HomeProfileSmallView extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
   const HomeProfileSmallView(
       {Key? key, required this.animationController, required this.animation})
       : super(key: key);

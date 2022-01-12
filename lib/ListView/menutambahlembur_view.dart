@@ -5,7 +5,7 @@ import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_lemb
 
 class MenuTambahLemburView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MenuTambahLemburView(
       {Key? key, required this.animationController, required this.animation})

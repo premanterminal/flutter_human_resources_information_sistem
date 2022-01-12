@@ -10,7 +10,7 @@ import 'package:intl/intl.dart';
 
 class MediterranesnDietView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MediterranesnDietView(
       {Key? key, required this.animationController, required this.animation})

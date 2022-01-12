@@ -14,7 +14,7 @@ import 'dart:io';
 
 class ProfilWorkExperienceLV extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const ProfilWorkExperienceLV(
       {Key? key, required this.animationController, required this.animation})

@@ -13,7 +13,7 @@ import 'dart:io';
 
 class ListLemburView extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const ListLemburView(
       {Key? key, required this.animationController, required this.animation})

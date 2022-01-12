@@ -13,7 +13,7 @@ import 'dart:io';
 
 class ListKehadiranView extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const ListKehadiranView(
       {Key? key, required this.animationController, required this.animation})

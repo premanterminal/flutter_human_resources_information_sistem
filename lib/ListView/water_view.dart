@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class WaterView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const WaterView(
       {Key? key, required this.animationController, required this.animation})

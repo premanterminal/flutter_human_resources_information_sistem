@@ -16,7 +16,7 @@ import 'dart:io';
 
 class KPILV extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const KPILV(
       {Key? key, required this.animationController, required this.animation})

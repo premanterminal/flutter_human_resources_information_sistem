@@ -13,7 +13,7 @@ import 'package:downloader/downloader.dart';
 
 class PengumumanNewest_ListView extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const PengumumanNewest_ListView(
       {Key? key, required this.animationController, required this.animation})

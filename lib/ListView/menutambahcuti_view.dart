@@ -6,7 +6,7 @@ import 'package:flutter_human_resources_information_sistem/Screen/pengajuan_cuti
 
 class MenuTambahCutiView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MenuTambahCutiView(
       {Key? key, required this.animationController, required this.animation})

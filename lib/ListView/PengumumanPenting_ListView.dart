@@ -13,7 +13,7 @@ import 'package:downloader/downloader.dart';
 
 class PengumumanPenting_Listview extends StatefulWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const PengumumanPenting_Listview(
       {Key? key, required this.animationController, required this.animation})

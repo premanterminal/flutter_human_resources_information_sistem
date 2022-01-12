@@ -4,7 +4,7 @@ import 'package:flutter_human_resources_information_sistem/Screen/tambah_portal_
 
 class MenuTambahPortalView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MenuTambahPortalView(
       {Key? key, required this.animationController, required this.animation})

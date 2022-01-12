@@ -4,7 +4,7 @@ import 'package:flutter_human_resources_information_sistem/Screen/hod_cuti.dart'
 
 class MenuTambahAppvCutiView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MenuTambahAppvCutiView(
       {Key? key, required this.animationController, required this.animation})

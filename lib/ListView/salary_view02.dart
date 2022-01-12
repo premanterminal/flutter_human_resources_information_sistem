@@ -4,7 +4,7 @@ import 'package:flutter_human_resources_information_sistem/Theme/fitness_app_the
 
 class Salary02View extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const Salary02View(
       {Key? key, required this.animationController, required this.animation})
