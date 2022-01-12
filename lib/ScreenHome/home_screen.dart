@@ -182,7 +182,7 @@ class HomeListView extends StatelessWidget {
   final HomeList listData;
   final VoidCallback callBack;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {

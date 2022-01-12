@@ -17,7 +17,7 @@ class HotelListView extends StatelessWidget {
   final VoidCallback callback;
   final HotelListData hotelData;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {

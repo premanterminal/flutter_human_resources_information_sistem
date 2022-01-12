@@ -10,7 +10,7 @@ class AreaListView extends StatefulWidget {
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
-  final Animation<dynamic> mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
   @override
   _AreaListViewState createState() => _AreaListViewState();
 }
@@ -103,7 +103,7 @@ class AreaView extends StatelessWidget {
 
   final String imagepath;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {

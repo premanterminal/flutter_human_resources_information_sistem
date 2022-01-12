@@ -33,7 +33,7 @@ class CreateDokumenListView extends StatefulWidget {
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
-  final Animation<dynamic> mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
 
   @override
   _CreateDokumenListViewState createState() => _CreateDokumenListViewState();
@@ -237,7 +237,7 @@ class CreateDokumenView extends StatefulWidget {
 
   final CreateDokumenListData mealsListData;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   _CreateDokumenViewState createState() => _CreateDokumenViewState();

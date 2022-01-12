@@ -13,7 +13,7 @@ class MealsListView extends StatefulWidget {
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
-  final Animation<dynamic> mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
 
   @override
   _MealsListViewState createState() => _MealsListViewState();
@@ -96,7 +96,7 @@ class MealsView extends StatelessWidget {
 
   final MealsListData mealsListData;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {

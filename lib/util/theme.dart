@@ -31,8 +31,9 @@ class CustomAppTheme {
   }
 
   TextTheme _buildFormAppTextTheme(TextTheme base) {
+    var headline;
     return base.copyWith(
-      headline: base.headline!.copyWith(
+      headline1: base.headline1!.copyWith(
         fontFamily: 'Cookie',
         fontSize: 36.0,
         color: mRegistrationBlack,
