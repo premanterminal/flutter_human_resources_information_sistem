@@ -382,9 +382,9 @@ class _LemburState extends State<Lembur> {
               Container(
                 margin: EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text('Showing 1 to ' +
-                    (perPage.toString() ?? '0') +
+                    (perPage.toString()) +
                     ' of ' +
-                    (total.toString() ?? "0") +
+                    (total.toString()) +
                     ' entries'),
               ),
               Container(
@@ -394,9 +394,9 @@ class _LemburState extends State<Lembur> {
                   children: [
                     Text('Page '),
                     Container(
-                      child: Text(currentPage.toString() ?? '0'),
+                      child: Text(currentPage.toString()),
                     ),
-                    Text(' Of ' + lastPage.toString() ?? '0'),
+                    Text(' Of ' + lastPage.toString()),
                     Container(
                       height: 30,
                       decoration: new BoxDecoration(

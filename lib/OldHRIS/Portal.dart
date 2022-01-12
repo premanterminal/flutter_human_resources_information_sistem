@@ -270,8 +270,7 @@ class _PortalState extends State<Portal> {
                             ? SizedBox()
                             : CachedNetworkImage(
                                 imageUrl:
-                                    BaseUrl.apiBaseUrlstorage + pictHeadline ??
-                                        "https://via.placeholder.com/300.png",
+                                    BaseUrl.apiBaseUrlstorage + pictHeadline,
                                 placeholder: (context, url) =>
                                     CircularProgressIndicator(),
                                 errorWidget: (context, url, error) =>
@@ -418,8 +417,7 @@ class _PortalState extends State<Portal> {
                                 ? SizedBox()
                                 : CachedNetworkImage(
                                     imageUrl: BaseUrl.apiBaseUrlstorage +
-                                            pictHeadline ??
-                                        "https://via.placeholder.com/300.png",
+                                        pictHeadline,
                                     placeholder: (context, url) =>
                                         CircularProgressIndicator(),
                                     errorWidget: (context, url, error) =>

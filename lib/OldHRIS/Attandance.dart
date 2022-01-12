@@ -368,8 +368,7 @@ class _AttandanceState extends State<Attandance> {
                             ),
                             Text(
                               DateFormat('EEEE, d MMMM y')
-                                      .format(DateTime.now()) ??
-                                  "",
+                                  .format(DateTime.now()),
                               style: TextStyle(
                                   color: Colors.black87,
                                   fontSize: 10,
@@ -432,7 +431,7 @@ class _AttandanceState extends State<Attandance> {
                 style: TextStyle(fontSize: 18, color: Colors.white),
               )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8.0,
         ),
         Container(
